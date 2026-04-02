@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+  <rect width="800" height="520" fill="#D4CBBB"/>
+  
+  <!-- Ground shadow -->
+  <ellipse cx="400" cy="343" rx="187" ry="13" fill="#c3baac" opacity="0.4"/>
+  
+  <!-- House body -->
+  <rect x="192" y="189" width="416" height="143" fill="#ada699"/>
+  
+  <!-- Side posts -->
+  <rect x="192" y="189" width="10" height="143" fill="#3A4A56" opacity="0.6"/>
+  <rect x="598" y="189" width="10" height="143" fill="#3A4A56" opacity="0.6"/>
+  
+  <rect x="465" y="280" width="78" height="52" fill="#ada699"/><rect x="469" y="286" width="70" height="40" fill="#c3baac" stroke="#ada699" stroke-width="1"/><rect x="223" y="220" width="36" height="28" fill="#c3baac" stroke="#ada699" stroke-width="1.2"/><line x1="241" y1="220" x2="241" y2="248" stroke="#ada699" stroke-width="0.8"/>
+  
+  <!-- Door -->
+  <rect x="385" y="286" width="31" height="46" fill="#D4CBBB" stroke="#4ECDC4" stroke-width="2"/>
+  
+  <!-- Roof -->
+  <polygon points="179,189 400,98 621,189" fill="#1C2B35" opacity="0.85"/>
+  
+  <!-- Wave 1 -->
+  <path d="M166 363 Q224 345 283 363 Q341 381 400 363 Q458 345 517 363 Q575 381 634 363" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Wave 2 -->
+  <path d="M166 381 Q224 372 283 381 Q341 390 400 381 Q458 372 517 381 Q575 390 634 381" stroke="#4ECDC4" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.35"/>
+  
+  <!-- Logo mark small -->
+  <text x="780" y="504" font-family="serif" font-size="13" fill="#1C2B35" opacity="0.2" text-anchor="end">WHITSUNDAY HOMES</text>
+  
+  <!-- Label -->
+  <rect x="0" y="463" width="800" height="57" fill="#c3baac" opacity="0.5"/>
+  <text x="20" y="484" font-family="sans-serif" font-size="16" fill="#1C2B35" opacity="0.55" font-weight="600">4 Bed · Cannonvale</text>
+</svg>

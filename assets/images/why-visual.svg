@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500">
+  <rect width="700" height="500" fill="#CEC7B7"/>
+  
+  <!-- Ground shadow -->
+  <ellipse cx="350" cy="330" rx="180" ry="12" fill="#bdb7a8" opacity="0.4"/>
+  
+  <!-- House body -->
+  <rect x="150" y="182" width="400" height="137" fill="#a8a396"/>
+  
+  <!-- Side posts -->
+  <rect x="150" y="182" width="10" height="137" fill="#3A4A56" opacity="0.6"/>
+  <rect x="540" y="182" width="10" height="137" fill="#3A4A56" opacity="0.6"/>
+  
+  <rect x="413" y="269" width="75" height="50" fill="#a8a396"/><rect x="417" y="275" width="67" height="38" fill="#bdb7a8" stroke="#a8a396" stroke-width="1"/><rect x="180" y="212" width="35" height="27" fill="#bdb7a8" stroke="#a8a396" stroke-width="1.2"/><line x1="197" y1="212" x2="197" y2="239" stroke="#a8a396" stroke-width="0.8"/>
+  
+  <!-- Door -->
+  <rect x="335" y="274" width="30" height="45" fill="#CEC7B7" stroke="#4ECDC4" stroke-width="2"/>
+  
+  <!-- Roof -->
+  <polygon points="138,182 350,95 562,182" fill="#1C2B35" opacity="0.85"/>
+  
+  <!-- Wave 1 -->
+  <path d="M125 349 Q181 332 237 349 Q293 366 349 349 Q405 332 461 349 Q517 366 573 349" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Wave 2 -->
+  <path d="M125 366 Q181 358 237 366 Q293 374 349 366 Q405 358 461 366 Q517 374 573 366" stroke="#4ECDC4" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.35"/>
+  
+  <!-- Logo mark small -->
+  <text x="680" y="484" font-family="serif" font-size="12" fill="#1C2B35" opacity="0.2" text-anchor="end">WHITSUNDAY HOMES</text>
+  
+  <!-- Label -->
+  <rect x="0" y="445" width="700" height="55" fill="#bdb7a8" opacity="0.5"/>
+  <text x="20" y="465" font-family="sans-serif" font-size="16" fill="#1C2B35" opacity="0.55" font-weight="600">Quality Craftsmanship</text>
+</svg>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitsunday Homes | Home Builder Airlie Beach & Whitsundays</title>
+<meta name="description" content="Whitsunday Homes – your local licensed home builder in Airlie Beach, Cannonvale and the Whitsunday region. Browse home designs, fixed price builds, and house & land packages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1C2B35;
+  --navy:   #1C3A4A;
+  --teal:   #4ECDC4;
+  --teal-d: #1C8A85;
+  --sand:   #E8DDD0;
+  --cream:  #F6F2ED;
+  --white:  #FAFAF8;
+  --mid:    #7A9099;
+  --rule:   #DDD6CC;
+  --light:  #F0EBE4;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:'Outfit',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-wm{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;line-height:1}
+.nav-wm .d{color:rgba(28,43,53,0.28)}
+.nav-wm .t{color:var(--teal-d)}
+.nav-sub{font-family:'Josefin Sans',sans-serif;font-size:7.5px;letter-spacing:0.5em;color:var(--mid);text-transform:uppercase;margin-top:3px;display:block;font-weight:300}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);text-decoration:none;font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--ink)!important;color:white!important;padding:10px 22px;border-radius:3px;font-size:10px!important;transition:background 0.2s!important}
+.nav-cta:hover{background:var(--navy)!important}
+
+/* HERO */
+.hero{padding-top:68px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{padding:100px 64px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:var(--teal-d);font-weight:400;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--teal)}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(40px,4.5vw,62px);line-height:1.08;color:var(--ink);margin-bottom:24px;letter-spacing:-0.02em}
+.hero h1 em{color:var(--teal-d);font-style:normal}
+.hero-desc{font-size:17px;color:var(--mid);max-width:420px;margin-bottom:44px;line-height:1.65;font-weight:300}
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.btn-primary{background:var(--ink);color:white;padding:16px 32px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;transition:background 0.2s,transform 0.15s;font-weight:600}
+.btn-primary:hover{background:var(--navy);transform:translateY(-1px)}
+.btn-ghost{color:var(--ink);font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:10px;transition:gap 0.2s;font-weight:600}
+.btn-ghost::after{content:'→';font-size:14px;font-family:'Outfit',sans-serif}
+.btn-ghost:hover{gap:16px}
+.hero-trust{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);display:flex;gap:40px;flex-wrap:wrap}
+.trust-item label{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:4px;font-weight:300}
+.trust-item span{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--ink)}
+
+/* HERO RIGHT */
+.hero-right{background:var(--cream);position:relative;overflow:hidden}
+.hero-right-inner{position:absolute;inset:0;display:grid;grid-template-rows:1fr 1fr;grid-template-columns:1fr 1fr;gap:3px;padding:80px 48px 48px}
+.hero-img-block{border-radius:4px;overflow:hidden;position:relative;background:var(--sand);background-size:cover;background-position:center}
+.hero-img-block.tall{grid-row:span 2}
+.hero-badge{position:absolute;bottom:40px;right:48px;background:var(--ink);color:white;border-radius:4px;padding:16px 20px;z-index:10}
+.badge-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--teal);line-height:1}
+.badge-label{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px;font-weight:300}
+
+/* SECTIONS */
+.section{padding:96px 80px}
+.section-eyebrow{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:var(--teal-d);font-weight:400;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.section-eyebrow::before{content:'';width:20px;height:1px;background:var(--teal)}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:800;color:var(--ink);line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}
+.section-sub{font-size:16px;color:var(--mid);font-weight:300;max-width:540px;line-height:1.65}
+
+/* DESIGNS */
+.designs-section{background:var(--white);padding:96px 80px}
+.designs-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px}
+.designs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.design-card{background:var(--cream);border-radius:6px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;cursor:pointer;text-decoration:none;color:inherit;display:block}
+.design-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(28,43,53,0.1)}
+.design-card-img{height:220px;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.design-card-tag{position:absolute;top:16px;left:16px;background:var(--ink);color:white;font-family:'Josefin Sans',sans-serif;font-size:7.5px;letter-spacing:0.3em;text-transform:uppercase;padding:5px 10px;border-radius:2px;font-weight:600}
+.design-card-body{padding:24px 22px 16px}
+.design-card-name{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin-bottom:4px;color:var(--ink)}
+.design-card-tagline{font-size:13px;color:var(--mid);margin-bottom:18px;font-weight:300}
+.design-card-specs{display:flex;gap:18px;border-top:1px solid var(--rule);padding-top:16px;flex-wrap:wrap}
+.spec-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--mid);font-family:'Josefin Sans',sans-serif;letter-spacing:0.05em}
+.spec-icon{width:13px;height:13px;flex-shrink:0}
+.spec-val{font-weight:600;color:var(--ink);font-size:13px}
+.design-card-footer{padding:16px 22px 22px;display:flex;align-items:center;justify-content:space-between}
+.design-from{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mid);font-weight:300}
+.design-price{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--teal-d)}
+.view-all-link{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;font-weight:600;transition:gap 0.2s}
+.view-all-link:hover{gap:16px}
+.view-all-link::after{content:'→';font-family:'Outfit',sans-serif;font-size:14px}
+
+/* PROCESS */
+.process-section{background:var(--ink);padding:100px 80px;position:relative;overflow:hidden}
+.process-section::before{content:'';position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(78,205,196,0.07);pointer-events:none}
+.process-section .section-eyebrow::before{background:var(--teal)}
+.process-section .section-eyebrow{color:rgba(78,205,196,0.8)}
+.process-section .section-title{color:white}
+.process-section .section-sub{color:rgba(255,255,255,0.45)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:60px;position:relative;z-index:1}
+.process-step{padding:36px 28px;border-left:1px solid rgba(255,255,255,0.06)}
+.step-num{font-family:'Syne',sans-serif;font-size:48px;font-weight:800;color:rgba(255,255,255,0.04);line-height:1;margin-bottom:16px;letter-spacing:-0.03em}
+.step-dot{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(78,205,196,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.step-dot-inner{width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.step-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:white;margin-bottom:10px}
+.step-desc{font-size:13px;color:rgba(255,255,255,0.38);line-height:1.65;font-weight:300}
+
+/* WHY */
+.why-section{padding:100px 80px;background:var(--cream)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px}
+.why-visual{border-radius:6px;height:480px;position:relative;overflow:hidden;background-size:cover;background-position:center}
+.why-stat-card{position:absolute;bottom:28px;left:28px;background:var(--ink);border-radius:6px;padding:20px 24px}
+.why-stat-num{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--teal);line-height:1}
+.why-stat-label{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.35em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:5px;font-weight:300}
+.why-features{display:flex;flex-direction:column;gap:0}
+.why-feature{padding:28px 0;border-bottom:1px solid var(--rule);display:flex;gap:20px;align-items:flex-start}
+.why-feature:first-child{padding-top:0}
+.why-feature:last-child{border-bottom:none;padding-bottom:0}
+.why-feature-icon{width:40px;height:40px;border-radius:50%;background:rgba(78,205,196,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.why-feature h4{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.why-feature p{font-size:13.5px;color:var(--mid);line-height:1.6;font-weight:300}
+
+/* BUILDS */
+.builds-section{padding:100px 80px;background:var(--white)}
+.builds-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px}
+.builds-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:260px 220px;gap:12px}
+.build-item{border-radius:5px;overflow:hidden;position:relative;background-size:cover;background-position:center}
+.build-item.span-col{grid-row:span 2}
+.build-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,43,53,0.65) 0%,transparent 55%);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:20px}
+.build-item:hover .build-overlay{opacity:1}
+.build-tag{font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.2em;color:white;font-weight:300}
+
+/* LOCATION STRIP */
+.location-strip{background:var(--light);padding:52px 80px;display:flex;align-items:center;gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.location-strip-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--mid);font-weight:300;white-space:nowrap;margin-right:48px;padding-right:48px;border-right:1px solid var(--rule)}
+.locations-list{display:flex;gap:32px;flex-wrap:wrap}
+.loc-item{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:8px}
+.loc-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal)}
+
+/* CTA */
+.cta-section{background:var(--navy);padding:100px 80px;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;border:1px solid rgba(78,205,196,0.06);pointer-events:none}
+.cta-section .section-eyebrow{justify-content:center;color:rgba(78,205,196,0.7)}
+.cta-section .section-eyebrow::before{background:var(--teal)}
+.cta-section .section-title{color:white;max-width:600px;margin:0 auto 20px}
+.cta-sub{font-size:16px;color:rgba(255,255,255,0.4);margin-bottom:44px;font-weight:300}
+.cta-actions{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
+.btn-teal{background:var(--teal);color:var(--ink);padding:16px 36px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;font-weight:600;transition:background 0.2s}
+.btn-teal:hover{background:#3dbdb5}
+.btn-outline-white{border:1px solid rgba(255,255,255,0.2);color:white;padding:15px 32px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;font-weight:600;transition:border-color 0.2s,background 0.2s}
+.btn-outline-white:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:64px 80px 40px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+.footer-brand-tagline{font-size:14px;color:rgba(255,255,255,0.35);margin-top:14px;font-weight:300;max-width:220px;line-height:1.6}
+.footer-col h5{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.25);font-weight:400;margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-col ul a{font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;font-weight:300;transition:color 0.2s}
+.footer-col ul a:hover{color:rgba(255,255,255,0.8)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.2);font-family:'Josefin Sans',sans-serif;letter-spacing:0.1em}
+.qbcc-badge{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:2px}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.hero-left>*{animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both}
+.hero-eyebrow{animation-delay:0.05s}
+.hero h1{animation-delay:0.12s}
+.hero-desc{animation-delay:0.2s}
+.hero-actions{animation-delay:0.28s}
+.hero-trust{animation-delay:0.36s}
+.hero-right{animation:fadeIn 1s ease both;animation-delay:0.4s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{height:400px}
+  .hero-left{padding:60px 40px}
+  .designs-section,.process-section,.why-section,.builds-section,.cta-section{padding:72px 40px}
+  .designs-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr}
+  .why-visual{height:320px}
+  .footer-top{grid-template-columns:1fr 1fr}
+  nav{padding:0 24px}
+  .location-strip{padding:40px}
+  .builds-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .build-item.span-col{grid-row:span 1}
+}
+@media(max-width:640px){
+  .designs-grid,.process-steps{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .footer-top{grid-template-columns:1fr}
+  .builds-grid{grid-template-columns:1fr}
+  .hero-left{padding:48px 24px}
+  .designs-section,.process-section,.why-section,.builds-section,.cta-section{padding:56px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="36" height="34" viewBox="0 0 96 90" fill="none">
+      <path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/>
+      <rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/>
+      <rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/>
+      <rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/>
+      <path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div>
+      <span class="nav-sub">Homes</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="home-designs/index.html">Home Designs</a></li>
+    <li><a href="previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="build-process.html">Build Process</a></li>
+    <li><a href="about/index.html">About</a></li>
+    <li><a href="contact/index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Airlie Beach · Whitsundays QLD</p>
+    <h1>Build the home you've always <em>imagined</em></h1>
+    <p class="hero-desc">Local, licensed, and passionate about crafting beautiful homes in one of Australia's most remarkable regions. Fixed pricing. No surprises.</p>
+    <div class="hero-actions">
+      <a href="home-designs/index.html" class="btn-primary">Browse Home Designs</a>
+      <a href="previous-builds/index.html" class="btn-ghost">View Previous Builds</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><label>Builds Completed</label><span>60+</span></div>
+      <div class="trust-item"><label>Years Local Experience</label><span>15+</span></div>
+      <div class="trust-item"><label>QBCC Licensed</label><span>Yes</span></div>
+      <div class="trust-item"><label>Fixed Price</label><span>Always</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="hero-img-block tall" style="background-image:url(assets/images/hero-build-main.svg);background-size:cover;background-position:center;"></div>
+      <div class="hero-img-block" style="background-image:url(assets/images/hero-interior.svg);background-size:cover;background-position:center;"></div>
+      <div class="hero-img-block" style="background-image:url(assets/images/hero-facade.svg);background-size:cover;background-position:center;"></div>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-num">4.9★</div>
+      <div class="badge-label">Google Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED DESIGNS -->
+<section class="designs-section">
+  <div class="designs-header">
+    <div>
+      <p class="section-eyebrow">Home Designs</p>
+      <h2 class="section-title">Plans built for the<br>Whitsunday lifestyle</h2>
+    </div>
+    <a href="home-designs/index.html" class="view-all-link">View all designs</a>
+  </div>
+  <div class="designs-grid">
+
+    <a href="home-designs/the-coral.html" class="design-card">
+      <div class="design-card-img" style="background-image:url(assets/images/design-coral.svg);">
+        <span class="design-card-tag">Most Popular</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Coral</div>
+        <div class="design-card-tagline">Single storey coastal living</div>
+        <div class="design-card-specs">
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">4</span>&nbsp;Bed</span>
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">2</span>&nbsp;Bath</span>
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">218</span>&nbsp;m²</span>
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">2</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <span class="design-from">From</span>
+        <span class="design-price">$385,000</span>
+      </div>
+    </a>
+
+    <a href="home-designs/the-bowen.html" class="design-card">
+      <div class="design-card-img" style="background-image:url(assets/images/design-bowen.svg);">
+        <span class="design-card-tag">Acreage Ready</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Bowen</div>
+        <div class="design-card-tagline">Spacious rural retreat design</div>
+        <div class="design-card-specs">
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">4</span>&nbsp;Bed</span>
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">2</span>&nbsp;Bath</span>
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">264</span>&nbsp;m²</span>
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">3</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <span class="design-from">From</span>
+        <span class="design-price">$448,000</span>
+      </div>
+    </a>
+
+    <a href="home-designs/the-airlie.html" class="design-card">
+      <div class="design-card-img" style="background-image:url(assets/images/design-airlie.svg);">
+        <span class="design-card-tag">New Design</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Airlie</div>
+        <div class="design-card-tagline">Modern tropical family home</div>
+        <div class="design-card-specs">
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">5</span>&nbsp;Bed</span>
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">3</span>&nbsp;Bath</span>
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">312</span>&nbsp;m²</span>
+          <span class="spec-item"><svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">2</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <span class="design-from">From</span>
+        <span class="design-price">$512,000</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <p class="section-eyebrow">Build Process</p>
+  <h2 class="section-title">How it works</h2>
+  <p class="section-sub">From first conversation to handing you the keys — a clear, stress-free process every step of the way.</p>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-dot"><div class="step-dot-inner"></div></div>
+      <div class="step-title">Choose Your Design</div>
+      <p class="step-desc">Browse our range of plans or bring your own ideas. We'll help you find the right design for your block and budget.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-dot"><div class="step-dot-inner"></div></div>
+      <div class="step-title">Site Assessment</div>
+      <p class="step-desc">We assess your land, soil type, slope and orientation to tailor the build to your specific site conditions.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-dot"><div class="step-dot-inner"></div></div>
+      <div class="step-title">Fixed Price Contract</div>
+      <p class="step-desc">We provide a fully itemised fixed-price contract. No hidden costs. What you sign is what you pay.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-dot"><div class="step-dot-inner"></div></div>
+      <div class="step-title">Build & Handover</div>
+      <p class="step-desc">Construction begins with regular updates throughout. We hand over the keys to your finished home on schedule.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <p class="section-eyebrow">Why Whitsunday Homes</p>
+  <h2 class="section-title">Built different,<br>built better</h2>
+  <div class="why-grid">
+    <div class="why-visual" style="background-image:url(assets/images/why-visual.svg);">
+      <div class="why-stat-card">
+        <div class="why-stat-num">100%</div>
+        <div class="why-stat-label">Fixed Price Builds</div>
+      </div>
+    </div>
+    <div class="why-features">
+      <div class="why-feature">
+        <div class="why-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div><h4>QBCC Licensed & Insured</h4><p>Fully licenced under the Queensland Building and Construction Commission with all required insurances for your peace of mind.</p></div>
+      </div>
+      <div class="why-feature">
+        <div class="why-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div><h4>Local Knowledge, Local Team</h4><p>We know the Whitsunday region — soil types, council requirements, cyclone ratings and what works in tropical Queensland.</p></div>
+      </div>
+      <div class="why-feature">
+        <div class="why-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div><h4>Transparent Fixed Pricing</h4><p>No surprises, no variations that blow your budget. Our fixed-price contracts mean what you agree is what you pay — full stop.</p></div>
+      </div>
+      <div class="why-feature">
+        <div class="why-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></div>
+        <div><h4>Communication That Keeps Up</h4><p>Regular build updates, site access, and a direct line to your builder. You'll never be left wondering what's happening.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDS TEASER -->
+<section class="builds-section">
+  <div class="builds-header">
+    <div>
+      <p class="section-eyebrow">Previous Builds</p>
+      <h2 class="section-title">Homes we're proud of</h2>
+    </div>
+    <a href="previous-builds/index.html" class="view-all-link">See all builds</a>
+  </div>
+  <div class="builds-grid">
+    <div class="build-item span-col" style="background-image:url(assets/images/build-1.svg);background-size:cover;background-position:center;">
+      <div class="build-overlay"><span class="build-tag">Cannonvale · 4 Bed · The Coral</span></div>
+    </div>
+    <div class="build-item" style="background-image:url(assets/images/build-2.svg);background-size:cover;background-position:center;">
+      <div class="build-overlay"><span class="build-tag">Airlie Beach · The Bowen</span></div>
+    </div>
+    <div class="build-item" style="background-image:url(assets/images/build-3.svg);background-size:cover;background-position:center;">
+      <div class="build-overlay"><span class="build-tag">Proserpine · Acreage</span></div>
+    </div>
+    <div class="build-item" style="background-image:url(assets/images/build-4.svg);background-size:cover;background-position:center;">
+      <div class="build-overlay"><span class="build-tag">Cannonvale · 5 Bed</span></div>
+    </div>
+    <div class="build-item" style="background-image:url(assets/images/build-5.svg);background-size:cover;background-position:center;">
+      <div class="build-overlay"><span class="build-tag">Airlie Beach · The Airlie</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION STRIP -->
+<div class="location-strip">
+  <span class="location-strip-label">We build across</span>
+  <div class="locations-list">
+    <span class="loc-item">Airlie Beach</span>
+    <span class="loc-item">Cannonvale</span>
+    <span class="loc-item">Proserpine</span>
+    <span class="loc-item">Jubilee Pocket</span>
+    <span class="loc-item">Mount Julian</span>
+    <span class="loc-item">Whitsunday Region</span>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="section-eyebrow">Ready to Build?</p>
+  <h2 class="section-title">Let's start with a conversation</h2>
+  <p class="cta-sub">Tell us about your block, your budget, and your vision — we'll take it from there.</p>
+  <div class="cta-actions">
+    <a href="contact/index.html" class="btn-teal">Get a Free Quote</a>
+    <a href="home-designs/index.html" class="btn-outline-white">Browse Designs First</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="28" height="26" viewBox="0 0 96 90" fill="none">
+          <path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/>
+          <rect x="14" y="42" width="68" height="32" fill="rgba(255,255,255,0.04)"/>
+          <rect x="14" y="42" width="6" height="32" fill="rgba(255,255,255,0.15)"/>
+          <rect x="76" y="42" width="6" height="32" fill="rgba(255,255,255,0.15)"/>
+          <rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/>
+          <path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;">
+          <span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span>
+          <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;margin-left:4px;">Homes</span>
+        </div>
+      </div>
+      <p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Designs</h5>
+      <ul>
+        <li><a href="home-designs/index.html">All Designs</a></li>
+        <li><a href="home-designs/index.html?type=single">Single Storey</a></li>
+        <li><a href="home-designs/index.html?type=double">Double Storey</a></li>
+        <li><a href="home-designs/index.html?type=acreage">Acreage</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Build</h5>
+      <ul>
+        <li><a href="build-process.html">Build Process</a></li>
+        <li><a href="inclusions.html">Standard Inclusions</a></li>
+        <li><a href="previous-builds/index.html">Previous Builds</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about/index.html">About Us</a></li>
+        <li><a href="locations/airlie-beach.html">Build in Airlie Beach</a></li>
+        <li><a href="locations/cannonvale.html">Build in Cannonvale</a></li>
+        <li><a href="contact/index.html">Get a Quote</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p>
+    <span class="qbcc-badge">QBCC Lic. No. 000000</span>
+  </div>
+</footer>
+
+</body>
+</html>
