@@ -241,20 +241,24 @@
 
 /* RESPONSIVE */
 @media(max-width:1100px){
-  .builds-masonry{ columns: 2; }
-  .builds-body{ padding: 44px 40px 80px; }
-  .builds-filter{ padding: 0 40px; }
-  .stats-strip{ grid-template-columns: 1fr 1fr; padding: 44px 40px; }
-  .testimonial-strip{ padding: 60px 40px; }
-  .testimonials-grid{ grid-template-columns: 1fr 1fr; }
+  .builds-masonry{columns:2}
+  .builds-body{padding:44px 40px 80px}
+  .builds-filter{padding:0 40px}
+  .stats-strip{grid-template-columns:1fr 1fr;padding:44px 40px}
+  .testimonial-strip{padding:60px 40px}
+  .testimonials-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
-  .builds-masonry{ columns: 1; }
-  .builds-body{ padding: 32px 24px 64px; }
-  .builds-filter{ padding: 0 16px; }
-  .stats-strip{ grid-template-columns: 1fr 1fr; padding: 40px 24px; }
-  .testimonial-strip{ padding: 48px 24px; }
-  .testimonials-grid{ grid-template-columns: 1fr; }
+  .builds-masonry{columns:1}
+  .builds-body{padding:28px 18px 80px}
+  .builds-filter{padding:0 12px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .filter-pills{padding:12px 0}
+  .pill{min-height:44px;padding:11px 16px}
+  .stats-strip{grid-template-columns:1fr 1fr;padding:36px 18px}
+  .stat-num{font-size:32px}
+  .testimonial-strip{padding:44px 18px}
+  .testimonials-grid{grid-template-columns:1fr}
+  .build-count{display:none}
 }
 </style>
 </head>
@@ -284,6 +288,16 @@
     <li><a href="../contact/index.html" class="nav-cta">Get a Quote</a></li>
   </ul>
 </nav>
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="../home-designs/index.html" class="nav-drawer-link">Home Designs</a>
+  <a href="../previous-builds/index.html" class="nav-drawer-link">Previous Builds</a>
+  <a href="../build-process.html" class="nav-drawer-link">Build Process</a>
+  <a href="../about/index.html" class="nav-drawer-link">About</a>
+  <a href="../house-and-land.html" class="nav-drawer-link">House &amp; Land</a>
+  <a href="../blog/index.html" class="nav-drawer-link">Blog</a>
+  <a href="../contact/index.html" class="nav-drawer-cta">Get a Free Quote</a>
+</div>
 
 <div class="page-header">
   <div class="page-header-inner">
@@ -521,6 +535,32 @@ document.querySelectorAll('.pill').forEach(pill => {
     applyFilters();
   });
 });
+</script>
+
+<!-- Mobile sticky quote bar -->
+<div class="mobile-quote-bar">
+  <div class="mqb-text">Whitsunday Homes<strong>Fixed price builds</strong></div>
+  <a href="../contact/index.html" class="mqb-btn">Get a Quote</a>
+</div>
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-mobile-toggle');
+  var drawer = document.getElementById('navDrawer');
+  if(!toggle || !drawer) return;
+  toggle.addEventListener('click', function(){
+    var open = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link tap
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
 </script>
 </body>
 </html>

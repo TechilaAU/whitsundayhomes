@@ -329,14 +329,17 @@
 
 /* RESPONSIVE */
 @media(max-width:1024px){
-  .contact-body{ grid-template-columns:1fr; }
-  .contact-left{ padding:60px 40px; }
-  .contact-right{ padding:60px 40px; }
+  .contact-body{grid-template-columns:1fr}
+  .contact-left{padding:60px 40px}
+  .contact-right{padding:60px 40px}
 }
 @media(max-width:640px){
-  .contact-left, .contact-right{ padding:48px 24px; }
-  .form-card{ padding:32px 24px; }
-  .form-row{ grid-template-columns:1fr; }
+  .contact-left{padding:44px 18px}
+  .contact-right{padding:36px 18px 100px}
+  .form-card{padding:28px 18px}
+  .form-row{grid-template-columns:1fr}
+  .contact-methods{margin-bottom:32px}
+  .hours-block{padding:18px 20px}
 }
 </style>
 </head>
@@ -366,6 +369,16 @@
     <li><a href="index.html" class="nav-cta">Get a Quote</a></li>
   </ul>
 </nav>
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="../home-designs/index.html" class="nav-drawer-link">Home Designs</a>
+  <a href="../previous-builds/index.html" class="nav-drawer-link">Previous Builds</a>
+  <a href="../build-process.html" class="nav-drawer-link">Build Process</a>
+  <a href="../about/index.html" class="nav-drawer-link">About</a>
+  <a href="../house-and-land.html" class="nav-drawer-link">House &amp; Land</a>
+  <a href="../blog/index.html" class="nav-drawer-link">Blog</a>
+  <a href="../contact/index.html" class="nav-drawer-cta">Get a Free Quote</a>
+</div>
 
 <div class="contact-body">
 
@@ -543,6 +556,27 @@ if (design) {
     }
   }
 }
+</script>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-mobile-toggle');
+  var drawer = document.getElementById('navDrawer');
+  if(!toggle || !drawer) return;
+  toggle.addEventListener('click', function(){
+    var open = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link tap
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
 </script>
 </body>
 </html>

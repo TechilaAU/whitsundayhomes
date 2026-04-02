@@ -83,8 +83,22 @@
 .related-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
 .related-specs{font-size:12px;color:var(--mid);font-weight:300;margin-bottom:8px}
 .related-price{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--teal-d)}
-@media(max-width:1024px){.design-hero{grid-template-columns:1fr;min-height:auto}.gallery-main{min-height:360px;height:360px}.design-info{padding:44px 36px}.floorplan-section,.enquire-section{grid-template-columns:1fr;gap:44px;padding:56px 40px}.facades-section,.related-section{padding:56px 40px}.specs-grid{grid-template-columns:repeat(4,1fr)}.facades-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.design-info{padding:32px 22px}.specs-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.floorplan-section,.enquire-section,.facades-section,.related-section{padding:44px 22px}.facades-grid,.related-grid{grid-template-columns:1fr}}
+@media(max-width:1024px){.design-hero{grid-template-columns:1fr;min-height:auto}.gallery-main{min-height:320px;height:320px}.design-info{padding:44px 36px}.floorplan-section,.enquire-section{grid-template-columns:1fr;gap:44px;padding:56px 40px}.facades-section,.related-section{padding:56px 40px}.specs-grid{grid-template-columns:repeat(4,1fr)}.facades-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+  .design-info{padding:28px 18px}
+  .gallery-main{min-height:240px;height:240px}
+  .gallery-thumbs{bottom:12px;left:12px;gap:6px}
+  .thumb{width:48px;height:36px}
+  .specs-grid{grid-template-columns:repeat(2,1fr)}
+  .form-row{grid-template-columns:1fr}
+  .floorplan-section,.enquire-section,.facades-section,.related-section{padding:40px 18px}
+  .facades-grid{grid-template-columns:1fr 1fr}
+  .related-grid{grid-template-columns:1fr}
+  .design-name{font-size:30px}
+  .design-price{font-size:28px}
+  .design-actions{flex-direction:column}
+  .btn-enquire{text-align:center}
+}
 </style>
 </head>
 <body>
@@ -101,6 +115,16 @@
     <li><a href="../contact/index.html" class="nav-cta">Get a Quote</a></li>
   </ul>
 </nav>
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="../home-designs/index.html" class="nav-drawer-link">Home Designs</a>
+  <a href="../previous-builds/index.html" class="nav-drawer-link">Previous Builds</a>
+  <a href="../build-process.html" class="nav-drawer-link">Build Process</a>
+  <a href="../about/index.html" class="nav-drawer-link">About</a>
+  <a href="../house-and-land.html" class="nav-drawer-link">House &amp; Land</a>
+  <a href="../blog/index.html" class="nav-drawer-link">Blog</a>
+  <a href="../contact/index.html" class="nav-drawer-cta">Get a Free Quote</a>
+</div>
 
 <section class="design-hero">
   <div class="design-hero-gallery">
@@ -250,6 +274,32 @@ function selectFacade(el, img, label) {
   document.getElementById('galleryMain').style.backgroundImage = 'url(' + img + ')';
   document.getElementById('facadeLabel').textContent = label;
 }
+</script>
+
+<!-- Mobile sticky quote bar -->
+<div class="mobile-quote-bar">
+  <div class="mqb-text">Whitsunday Homes<strong>Fixed price builds</strong></div>
+  <a href="../contact/index.html" class="mqb-btn">Get a Quote</a>
+</div>
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-mobile-toggle');
+  var drawer = document.getElementById('navDrawer');
+  if(!toggle || !drawer) return;
+  toggle.addEventListener('click', function(){
+    var open = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link tap
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
 </script>
 </body>
 </html>

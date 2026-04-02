@@ -77,8 +77,21 @@
 .form-submit{width:100%;background:var(--ink);color:white;border:none;padding:15px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:background 0.2s}
 .form-submit:hover{background:var(--navy)}
 
-@media(max-width:1024px){.hl-intro{grid-template-columns:1fr;gap:48px;padding:60px 40px}.packages-section,.how-it-works-hl,.register-section{padding:64px 40px}.packages-grid{grid-template-columns:1fr 1fr}.how-grid{grid-template-columns:1fr 1fr}.register-section{grid-template-columns:1fr;gap:44px}}
-@media(max-width:640px){.hl-intro,.packages-section,.how-it-works-hl,.register-section{padding:48px 24px}.packages-grid{grid-template-columns:1fr}.how-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+@media(max-width:1024px){
+  .hl-intro{grid-template-columns:1fr;gap:48px;padding:60px 40px}
+  .packages-section,.how-it-works-hl,.register-section{padding:64px 40px}
+  .packages-grid{grid-template-columns:1fr 1fr}
+  .how-grid{grid-template-columns:1fr 1fr}
+  .register-section{grid-template-columns:1fr;gap:44px}
+}
+@media(max-width:640px){
+  .hl-intro,.packages-section,.how-it-works-hl,.register-section{padding:44px 18px}
+  .packages-grid{grid-template-columns:1fr}
+  .how-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .package-specs{gap:10px}
+  .coming-soon-areas .area-row{flex-direction:column;align-items:flex-start;gap:8px;padding:16px 0}
+}
 </style>
 </head>
 <body>
@@ -95,6 +108,16 @@
     <li><a href="contact/index.html" class="nav-cta">Get a Quote</a></li>
   </ul>
 </nav>
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="home-designs/index.html" class="nav-drawer-link">Home Designs</a>
+  <a href="previous-builds/index.html" class="nav-drawer-link">Previous Builds</a>
+  <a href="build-process.html" class="nav-drawer-link">Build Process</a>
+  <a href="about/index.html" class="nav-drawer-link">About</a>
+  <a href="house-and-land.html" class="nav-drawer-link">House &amp; Land</a>
+  <a href="blog/index.html" class="nav-drawer-link">Blog</a>
+  <a href="contact/index.html" class="nav-drawer-cta">Get a Free Quote</a>
+</div>
 
 <div class="page-header">
   <div class="page-header-inner">
@@ -360,5 +383,31 @@
   </div>
   <div class="footer-bottom"><p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p><span class="qbcc-badge">QBCC Lic. No. 000000</span></div>
 </footer>
+
+<!-- Mobile sticky quote bar -->
+<div class="mobile-quote-bar">
+  <div class="mqb-text">Whitsunday Homes<strong>Fixed price builds</strong></div>
+  <a href="contact/index.html" class="mqb-btn">Get a Quote</a>
+</div>
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-mobile-toggle');
+  var drawer = document.getElementById('navDrawer');
+  if(!toggle || !drawer) return;
+  toggle.addEventListener('click', function(){
+    var open = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link tap
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 </body>
 </html>

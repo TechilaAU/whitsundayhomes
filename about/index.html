@@ -342,18 +342,21 @@
 
 /* RESPONSIVE */
 @media(max-width:1024px){
-  .story-section,.credentials-section{ grid-template-columns:1fr; gap:48px; padding:64px 40px; }
-  .values-section{ padding:72px 40px; }
-  .values-grid{ grid-template-columns:1fr; }
-  .team-section{ padding:72px 40px; }
-  .team-grid{ grid-template-columns:1fr 1fr; }
+  .story-section,.credentials-section{grid-template-columns:1fr;gap:48px;padding:64px 40px}
+  .values-section{padding:72px 40px}
+  .values-grid{grid-template-columns:1fr}
+  .team-section{padding:72px 40px}
+  .team-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
-  .story-section,.credentials-section{ padding:52px 24px; }
-  .values-section{ padding:56px 24px; }
-  .team-section{ padding:56px 24px; }
-  .team-grid{ grid-template-columns:1fr; }
-  .story-accent{ right:0; bottom:-16px; }
+  .story-section,.credentials-section{padding:44px 18px}
+  .values-section{padding:52px 18px}
+  .team-section{padding:52px 18px}
+  .team-grid{grid-template-columns:1fr}
+  .story-accent{right:0;bottom:-16px}
+  .story-img{aspect-ratio:3/2}
+  .cred-big-num{font-size:56px}
+  .qbcc-block{flex-direction:column;gap:8px}
 }
 </style>
 </head>
@@ -383,6 +386,16 @@
     <li><a href="../contact/index.html" class="nav-cta">Get a Quote</a></li>
   </ul>
 </nav>
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="../home-designs/index.html" class="nav-drawer-link">Home Designs</a>
+  <a href="../previous-builds/index.html" class="nav-drawer-link">Previous Builds</a>
+  <a href="../build-process.html" class="nav-drawer-link">Build Process</a>
+  <a href="../about/index.html" class="nav-drawer-link">About</a>
+  <a href="../house-and-land.html" class="nav-drawer-link">House &amp; Land</a>
+  <a href="../blog/index.html" class="nav-drawer-link">Blog</a>
+  <a href="../contact/index.html" class="nav-drawer-cta">Get a Free Quote</a>
+</div>
 
 <div class="page-header">
   <div class="page-header-inner">
@@ -542,5 +555,31 @@
     <span class="qbcc-badge">QBCC Lic. No. 000000</span>
   </div>
 </footer>
+
+<!-- Mobile sticky quote bar -->
+<div class="mobile-quote-bar">
+  <div class="mqb-text">Whitsunday Homes<strong>Fixed price builds</strong></div>
+  <a href="../contact/index.html" class="mqb-btn">Get a Quote</a>
+</div>
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-mobile-toggle');
+  var drawer = document.getElementById('navDrawer');
+  if(!toggle || !drawer) return;
+  toggle.addEventListener('click', function(){
+    var open = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link tap
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 </body>
 </html>

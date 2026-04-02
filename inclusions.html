@@ -46,8 +46,20 @@
 .upgrade-from{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);font-weight:300}
 .upgrade-price{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--teal-d)}
 
-@media(max-width:1100px){.inclusions-grid{grid-template-columns:1fr 1fr}.upgrade-grid{grid-template-columns:1fr 1fr}.inclusions-body,.not-included-section,.upgrade-section{padding:64px 40px}.inclusions-intro{grid-template-columns:1fr 1fr;padding:44px 40px}}
-@media(max-width:640px){.inclusions-grid{grid-template-columns:1fr}.not-included-grid{grid-template-columns:1fr}.upgrade-grid{grid-template-columns:1fr 1fr}.inclusions-body,.not-included-section,.upgrade-section{padding:48px 24px}.inclusions-intro{grid-template-columns:1fr 1fr;padding:36px 24px}}
+@media(max-width:1100px){
+  .inclusions-grid{grid-template-columns:1fr 1fr}
+  .upgrade-grid{grid-template-columns:1fr 1fr}
+  .inclusions-body,.not-included-section,.upgrade-section{padding:64px 40px}
+  .inclusions-intro{grid-template-columns:1fr 1fr;padding:44px 40px}
+}
+@media(max-width:640px){
+  .inclusions-grid{grid-template-columns:1fr}
+  .not-included-grid{grid-template-columns:1fr}
+  .upgrade-grid{grid-template-columns:1fr 1fr}
+  .inclusions-body,.not-included-section,.upgrade-section{padding:40px 18px}
+  .inclusions-intro{grid-template-columns:1fr 1fr;padding:28px 18px}
+  .intro-stat-num{font-size:26px}
+}
 </style>
 </head>
 <body>
@@ -64,6 +76,16 @@
     <li><a href="contact/index.html" class="nav-cta">Get a Quote</a></li>
   </ul>
 </nav>
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="home-designs/index.html" class="nav-drawer-link">Home Designs</a>
+  <a href="previous-builds/index.html" class="nav-drawer-link">Previous Builds</a>
+  <a href="build-process.html" class="nav-drawer-link">Build Process</a>
+  <a href="about/index.html" class="nav-drawer-link">About</a>
+  <a href="house-and-land.html" class="nav-drawer-link">House &amp; Land</a>
+  <a href="blog/index.html" class="nav-drawer-link">Blog</a>
+  <a href="contact/index.html" class="nav-drawer-cta">Get a Free Quote</a>
+</div>
 
 <div class="page-header">
   <div class="page-header-inner">
@@ -278,5 +300,31 @@
   </div>
   <div class="footer-bottom"><p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p><span class="qbcc-badge">QBCC Lic. No. 000000</span></div>
 </footer>
+
+<!-- Mobile sticky quote bar -->
+<div class="mobile-quote-bar">
+  <div class="mqb-text">Whitsunday Homes<strong>Fixed price builds</strong></div>
+  <a href="contact/index.html" class="mqb-btn">Get a Quote</a>
+</div>
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-mobile-toggle');
+  var drawer = document.getElementById('navDrawer');
+  if(!toggle || !drawer) return;
+  toggle.addEventListener('click', function(){
+    var open = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link tap
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 </body>
 </html>

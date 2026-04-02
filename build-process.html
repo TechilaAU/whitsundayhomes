@@ -42,8 +42,22 @@
 .faq-q{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
 .faq-a{font-size:13.5px;color:var(--mid);font-weight:300;line-height:1.65}
 
-@media(max-width:1024px){.timeline-section,.faq-section{padding:64px 40px}.timeline-strip{grid-template-columns:1fr 1fr;padding:44px 40px}}
-@media(max-width:640px){.timeline-section,.faq-section{padding:48px 24px}.timeline::before{left:32px}.timeline-step{grid-template-columns:64px 1fr}.step-right{padding-left:16px}.timeline-strip{padding:36px 24px}.faq-grid{grid-template-columns:1fr}}
+@media(max-width:1024px){
+  .timeline-section,.faq-section{padding:64px 40px}
+  .timeline-strip{grid-template-columns:1fr 1fr;padding:44px 40px}
+}
+@media(max-width:640px){
+  .timeline-section,.faq-section{padding:44px 18px}
+  .timeline::before{left:28px}
+  .timeline-step{grid-template-columns:56px 1fr}
+  .step-circle{width:36px;height:36px;font-size:12px}
+  .step-right{padding:0 0 48px 16px}
+  .step-title{font-size:18px}
+  .step-img{height:160px}
+  .timeline-strip{grid-template-columns:1fr 1fr;padding:28px 18px}
+  .tl-weeks{font-size:20px}
+  .faq-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -60,6 +74,16 @@
     <li><a href="contact/index.html" class="nav-cta">Get a Quote</a></li>
   </ul>
 </nav>
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="home-designs/index.html" class="nav-drawer-link">Home Designs</a>
+  <a href="previous-builds/index.html" class="nav-drawer-link">Previous Builds</a>
+  <a href="build-process.html" class="nav-drawer-link">Build Process</a>
+  <a href="about/index.html" class="nav-drawer-link">About</a>
+  <a href="house-and-land.html" class="nav-drawer-link">House &amp; Land</a>
+  <a href="blog/index.html" class="nav-drawer-link">Blog</a>
+  <a href="contact/index.html" class="nav-drawer-cta">Get a Free Quote</a>
+</div>
 
 <div class="page-header">
   <div class="page-header-inner">
@@ -198,5 +222,31 @@
   </div>
   <div class="footer-bottom"><p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p><span class="qbcc-badge">QBCC Lic. No. 000000</span></div>
 </footer>
+
+<!-- Mobile sticky quote bar -->
+<div class="mobile-quote-bar">
+  <div class="mqb-text">Whitsunday Homes<strong>Fixed price builds</strong></div>
+  <a href="contact/index.html" class="mqb-btn">Get a Quote</a>
+</div>
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-mobile-toggle');
+  var drawer = document.getElementById('navDrawer');
+  if(!toggle || !drawer) return;
+  toggle.addEventListener('click', function(){
+    var open = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close on link tap
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 </body>
 </html>
