@@ -3,37 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Build Process | Whitsunday Homes</title>
+<title>Build Process | Whitsunday Homes — How We Build Your Home</title>
+<meta name="description" content="Learn how Whitsunday Homes builds your home from first conversation to handover. Fixed price, transparent process, no surprises across Airlie Beach and the Whitsundays.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Syne:wght@700;800&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#F6F2ED;font-family:'Outfit',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center}
-nav{position:fixed;top:0;left:0;right:0;background:rgba(250,250,248,0.95);border-bottom:1px solid #DDD6CC;padding:0 40px;height:68px;display:flex;align-items:center}
-.nav-wm{font-family:'Syne',sans-serif;font-weight:800;font-size:17px}
-.nav-wm .d{color:rgba(28,43,53,0.28)}
-.nav-wm .t{color:#1C8A85}
-.badge{display:inline-block;background:rgba(78,205,196,0.12);color:#1C8A85;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.35em;text-transform:uppercase;padding:6px 16px;border-radius:2px;margin-bottom:24px;font-weight:600}
-h1{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:800;color:#1C2B35;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.1}
-p{font-size:16px;color:#7A9099;font-weight:300;max-width:420px;line-height:1.65;margin-bottom:40px}
-.btn{background:#1C2B35;color:white;padding:15px 32px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;font-weight:600;display:inline-block}
-.btn:hover{background:#1C3A4A}
-.wave{margin-bottom:32px;opacity:0.4}
+.timeline-strip{background:var(--cream);padding:48px 80px;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;border-bottom:1px solid var(--rule)}
+.tl-phase{padding:24px 20px;border-left:1px solid var(--rule)}
+.tl-phase:first-child{border-left:none}
+.tl-weeks{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--ink);line-height:1;margin-bottom:6px}
+.tl-weeks span{color:var(--teal-d);font-size:14px}
+.tl-phase-name{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mid);font-weight:300}
+
+.timeline-section{padding:80px}
+.timeline{margin-top:64px;position:relative}
+.timeline::before{content:'';position:absolute;left:52px;top:0;bottom:0;width:1px;background:var(--rule)}
+.timeline-step{display:grid;grid-template-columns:104px 1fr;margin-bottom:0}
+.step-left{display:flex;flex-direction:column;align-items:center;padding-top:4px}
+.step-circle{width:40px;height:40px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:white;flex-shrink:0;position:relative;z-index:2;transition:background 0.2s}
+.timeline-step:hover .step-circle{background:var(--teal-d)}
+.step-connector{width:1px;flex:1;background:var(--rule);min-height:40px}
+.timeline-step:last-child .step-connector{display:none}
+.step-right{padding:0 0 64px 32px}
+.step-tag{font-family:'Josefin Sans',sans-serif;font-size:8.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--teal-d);font-weight:400;margin-bottom:8px}
+.step-title{font-family:'Syne',sans-serif;font-size:clamp(20px,2.5vw,26px);font-weight:800;color:var(--ink);margin-bottom:14px;letter-spacing:-0.01em;line-height:1.1}
+.step-desc{font-size:15px;color:var(--mid);font-weight:300;line-height:1.7;max-width:580px;margin-bottom:20px}
+.step-img{height:200px;background:var(--sand);background-size:cover;background-position:center;border-radius:5px;margin-bottom:24px;max-width:480px}
+.step-details{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.step-detail-pill{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.15em;padding:6px 14px;border-radius:2px;background:var(--cream);color:var(--ink);text-transform:uppercase;font-weight:400}
+.step-duration{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);font-weight:300;display:flex;align-items:center;gap:8px}
+.step-duration::before{content:'';width:16px;height:1px;background:var(--rule)}
+
+.faq-section{padding:80px;background:var(--cream)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:52px}
+.faq-item{background:var(--white);border-radius:5px;padding:28px 24px;border-left:3px solid transparent;transition:border-color 0.2s}
+.faq-item:hover{border-left-color:var(--teal)}
+.faq-q{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.faq-a{font-size:13.5px;color:var(--mid);font-weight:300;line-height:1.65}
+
+@media(max-width:1024px){.timeline-section,.faq-section{padding:64px 40px}.timeline-strip{grid-template-columns:1fr 1fr;padding:44px 40px}}
+@media(max-width:640px){.timeline-section,.faq-section{padding:48px 24px}.timeline::before{left:32px}.timeline-step{grid-template-columns:64px 1fr}.step-right{padding-left:16px}.timeline-strip{padding:36px 24px}.faq-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav>
-  <div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div>
+  <a href="index.html" class="nav-logo">
+    <svg width="36" height="34" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/><rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+    <div><div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div><span class="nav-sub">Homes</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="home-designs/index.html">Home Designs</a></li>
+    <li><a href="previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="build-process.html" class="active">Build Process</a></li>
+    <li><a href="about/index.html">About</a></li>
+    <li><a href="contact/index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
 </nav>
-<svg class="wave" width="72" height="68" viewBox="0 0 96 90" fill="none">
-  <path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5" fill="none" stroke-linejoin="round"/>
-  <rect x="14" y="42" width="68" height="32" fill="#1C2B35" opacity="0.4"/>
-  <rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.5"/>
-  <path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-</svg>
-<span class="badge">Coming Soon</span>
-<h1>Build Process</h1>
-<p>This page is currently being built. Check back soon — or head back to browse everything that's ready now.</p>
-<a href="index.html" class="btn">← Back to Home</a>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow anim anim-d1">Build Process</p>
+    <h1 class="page-title anim anim-d2">From conversation<br>to <em>keys in hand</em></h1>
+    <p class="page-sub anim anim-d3">A transparent, stress-free journey. Here's exactly what happens between your first call and the day we hand over your new home.</p>
+  </div>
+</div>
+
+<div class="timeline-strip">
+  <div class="tl-phase"><div class="tl-weeks">1–2<span> wks</span></div><div class="tl-phase-name">Design & Quote</div></div>
+  <div class="tl-phase"><div class="tl-weeks">4–6<span> wks</span></div><div class="tl-phase-name">Approvals & Contract</div></div>
+  <div class="tl-phase"><div class="tl-weeks">2–4<span> wks</span></div><div class="tl-phase-name">Pre-Construction</div></div>
+  <div class="tl-phase"><div class="tl-weeks">20–28<span> wks</span></div><div class="tl-phase-name">Construction</div></div>
+  <div class="tl-phase"><div class="tl-weeks">1–2<span> wks</span></div><div class="tl-phase-name">Handover</div></div>
+</div>
+
+<section class="timeline-section">
+  <p class="section-eyebrow">Step by Step</p>
+  <h2 class="section-title">Every stage, explained</h2>
+  <div class="timeline">
+
+    <div class="timeline-step">
+      <div class="step-left"><div class="step-circle">1</div><div class="step-connector"></div></div>
+      <div class="step-right">
+        <div class="step-tag">Week 1</div>
+        <div class="step-title">Initial Consultation</div>
+        <div class="step-img" style="background-image:url(assets/images/build-2.svg);"></div>
+        <p class="step-desc">We start with a no-obligation conversation — in person, over the phone, or by email. Tell us about your block, your ideas, and your budget. We'll tell you what's realistic, which designs suit your land, and what to expect throughout the process.</p>
+        <div class="step-details"><span class="step-detail-pill">No obligation</span><span class="step-detail-pill">Free of charge</span><span class="step-detail-pill">In person or remote</span></div>
+        <span class="step-duration">Typically 1–2 hours</span>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-left"><div class="step-circle">2</div><div class="step-connector"></div></div>
+      <div class="step-right">
+        <div class="step-tag">Week 1–2</div>
+        <div class="step-title">Site Assessment & Design Selection</div>
+        <p class="step-desc">We visit your block to assess soil type, slope, orientation, and any site-specific considerations — cyclone ratings, council overlays, easements. From there we help you select or customise a design that suits your land and lifestyle. No two sites are the same, and our assessment makes sure your build is right for yours.</p>
+        <div class="step-details"><span class="step-detail-pill">Site visit included</span><span class="step-detail-pill">Soil & slope assessment</span><span class="step-detail-pill">Design customisation</span><span class="step-detail-pill">Cyclone compliance check</span></div>
+        <span class="step-duration">1–2 weeks</span>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-left"><div class="step-circle">3</div><div class="step-connector"></div></div>
+      <div class="step-right">
+        <div class="step-tag">Week 2–3</div>
+        <div class="step-title">Fixed Price Quote</div>
+        <p class="step-desc">We provide a fully itemised, fixed-price quote. Every line item is listed — slab, frame, roofing, fit-out, inclusions, site costs — so you know exactly what you're getting. What you sign is what you pay. No hidden variations. Ever.</p>
+        <div class="step-details"><span class="step-detail-pill">Fully itemised</span><span class="step-detail-pill">Fixed price guarantee</span><span class="step-detail-pill">Site costs included</span><span class="step-detail-pill">No hidden extras</span></div>
+        <span class="step-duration">Quote delivered within 5 business days</span>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-left"><div class="step-circle">4</div><div class="step-connector"></div></div>
+      <div class="step-right">
+        <div class="step-tag">Week 3–8</div>
+        <div class="step-title">Contract, Approvals & Colour Selections</div>
+        <p class="step-desc">Once you're happy, we sign a QBCC-compliant fixed price contract. While council approvals and building permits are lodged — typically 4–6 weeks — you attend a personalisation appointment to finalise colour selections, fixtures, and fittings. This is the fun part.</p>
+        <div class="step-details"><span class="step-detail-pill">QBCC contract</span><span class="step-detail-pill">Council DA lodged</span><span class="step-detail-pill">Colour selections</span><span class="step-detail-pill">Fixtures & fittings</span><span class="step-detail-pill">Home warranty insurance</span></div>
+        <span class="step-duration">4–6 weeks for approvals</span>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-left"><div class="step-circle">5</div><div class="step-connector"></div></div>
+      <div class="step-right">
+        <div class="step-tag">Week 8–12</div>
+        <div class="step-title">Pre-Construction</div>
+        <p class="step-desc">Site is prepared — earthworks, surveying, engineering finalised, materials ordered and trades scheduled. Everything is locked in before a single slab is poured.</p>
+        <div class="step-details"><span class="step-detail-pill">Site preparation</span><span class="step-detail-pill">Earthworks</span><span class="step-detail-pill">Engineering sign-off</span><span class="step-detail-pill">Material ordering</span></div>
+        <span class="step-duration">2–4 weeks</span>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-left"><div class="step-circle">6</div><div class="step-connector"></div></div>
+      <div class="step-right">
+        <div class="step-tag">Week 12–36</div>
+        <div class="step-title">Construction</div>
+        <div class="step-img" style="background-image:url(assets/images/build-4.svg);"></div>
+        <p class="step-desc">Construction is broken into clear stages — slab, frame, lock-up, fit-out, completion. You receive updates at every stage milestone and have full site access throughout. Mike, our site supervisor, is on site daily. James inspects every key milestone personally.</p>
+        <div class="step-details"><span class="step-detail-pill">Slab pour</span><span class="step-detail-pill">Frame & roof</span><span class="step-detail-pill">Lock-up</span><span class="step-detail-pill">Fit-out</span><span class="step-detail-pill">Weekly progress updates</span><span class="step-detail-pill">Full site access</span></div>
+        <span class="step-duration">20–28 weeks depending on design</span>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-left"><div class="step-circle">7</div><div class="step-connector"></div></div>
+      <div class="step-right">
+        <div class="step-tag">Final Stage</div>
+        <div class="step-title">Practical Completion & Handover</div>
+        <p class="step-desc">A building certifier conducts final inspection and issues a Certificate of Classification. We do a detailed walkthrough with you — every room, every fixture. Any items are rectified before you receive the keys. Then it's yours.</p>
+        <div class="step-details"><span class="step-detail-pill">Certifier inspection</span><span class="step-detail-pill">Certificate of classification</span><span class="step-detail-pill">Client walkthrough</span><span class="step-detail-pill">Defects rectified</span><span class="step-detail-pill">Keys & documentation</span></div>
+        <span class="step-duration">1–2 weeks</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="faq-section">
+  <p class="section-eyebrow">Common Questions</p>
+  <h2 class="section-title">What people usually ask</h2>
+  <div class="faq-grid">
+    <div class="faq-item"><div class="faq-q">What does "fixed price" actually mean?</div><p class="faq-a">The price in your contract is the price you pay — regardless of material costs, labour, or weather delays. We absorb cost variations. You don't.</p></div>
+    <div class="faq-item"><div class="faq-q">How long does the whole process take?</div><p class="faq-a">From first consultation to handover, most builds take 9–12 months including approvals (4–6 weeks), pre-construction (2–4 weeks), and construction (20–28 weeks).</p></div>
+    <div class="faq-item"><div class="faq-q">Do I need land before contacting you?</div><p class="faq-a">No — we can help you find suitable land or offer house and land packages. Talk to us about what you're looking for and we'll point you in the right direction.</p></div>
+    <div class="faq-item"><div class="faq-q">Can I modify one of your standard designs?</div><p class="faq-a">Yes. Every design can be modified — room sizes, layout, facade, garage bays. We'll let you know how modifications affect the price before you commit to anything.</p></div>
+    <div class="faq-item"><div class="faq-q">What are site costs and are they included?</div><p class="faq-a">Site costs cover earthworks, soil testing, retaining walls, and service connections. These are site-specific and assessed separately. We include a site cost estimate in your quote after our site visit.</p></div>
+    <div class="faq-item"><div class="faq-q">Do you build on sloping blocks?</div><p class="faq-a">Yes. We build on flat, sloping, and steep blocks. Sloping blocks may require additional earthworks or a split-level design approach — all factored into your fixed price quote.</p></div>
+    <div class="faq-item"><div class="faq-q">What warranty do I get on my new home?</div><p class="faq-a">QBCC statutory warranty: 1 year for non-structural defects, 3 years for major defects, 6 years 6 months for structural defects — all backed by QBCC Home Warranty Insurance.</p></div>
+    <div class="faq-item"><div class="faq-q">Can I visit the site during construction?</div><p class="faq-a">Absolutely. You have full site access throughout construction. We just ask that you check in with Mike or James first so we can make sure the site is safe for your visit.</p></div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <p class="section-eyebrow">Ready to Start?</p>
+  <h2 class="section-title">Step one is a free conversation</h2>
+  <p class="cta-strip-sub">Tell us about your block, your budget, and your vision.</p>
+  <div class="cta-actions">
+    <a href="contact/index.html" class="btn-teal">Get a Free Quote</a>
+    <a href="home-designs/index.html" class="btn-outline-white">Browse Home Designs</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div><div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="26" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;"><span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span> <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;">Homes</span></div></div><p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p></div>
+    <div class="footer-col"><h5>Designs</h5><ul><li><a href="home-designs/index.html">All Designs</a></li><li><a href="home-designs/the-coral.html">The Coral</a></li><li><a href="home-designs/the-bowen.html">The Bowen</a></li></ul></div>
+    <div class="footer-col"><h5>Build</h5><ul><li><a href="build-process.html">Build Process</a></li><li><a href="inclusions.html">Inclusions</a></li><li><a href="previous-builds/index.html">Previous Builds</a></li><li><a href="testimonials.html">Testimonials</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="about/index.html">About Us</a></li><li><a href="locations/airlie-beach.html">Build in Airlie Beach</a></li><li><a href="locations/cannonvale.html">Build in Cannonvale</a></li><li><a href="contact/index.html">Get a Quote</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p><span class="qbcc-badge">QBCC Lic. No. 000000</span></div>
+</footer>
 </body>
 </html>
