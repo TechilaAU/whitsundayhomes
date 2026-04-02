@@ -3,37 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Standard Inclusions | Whitsunday Homes</title>
+<title>Standard Inclusions | Whitsunday Homes — What's Included in Your Build</title>
+<meta name="description" content="See exactly what's included in every Whitsunday Homes fixed-price build. No hidden extras — full inclusions list covering structure, fit-out, kitchen, bathrooms, and more.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Syne:wght@700;800&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#F6F2ED;font-family:'Outfit',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center}
-nav{position:fixed;top:0;left:0;right:0;background:rgba(250,250,248,0.95);border-bottom:1px solid #DDD6CC;padding:0 40px;height:68px;display:flex;align-items:center}
-.nav-wm{font-family:'Syne',sans-serif;font-weight:800;font-size:17px}
-.nav-wm .d{color:rgba(28,43,53,0.28)}
-.nav-wm .t{color:#1C8A85}
-.badge{display:inline-block;background:rgba(78,205,196,0.12);color:#1C8A85;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.35em;text-transform:uppercase;padding:6px 16px;border-radius:2px;margin-bottom:24px;font-weight:600}
-h1{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:800;color:#1C2B35;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.1}
-p{font-size:16px;color:#7A9099;font-weight:300;max-width:420px;line-height:1.65;margin-bottom:40px}
-.btn{background:#1C2B35;color:white;padding:15px 32px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;font-weight:600;display:inline-block}
-.btn:hover{background:#1C3A4A}
-.wave{margin-bottom:32px;opacity:0.4}
+.inclusions-intro{background:var(--ink);padding:56px 80px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2px}
+.intro-stat{padding:28px 24px;border-left:1px solid rgba(255,255,255,0.06)}
+.intro-stat:first-child{border-left:none}
+.intro-stat-num{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--teal);line-height:1;margin-bottom:6px}
+.intro-stat-label{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-weight:300}
+
+.inclusions-body{padding:80px}
+.inclusions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+
+.inclusion-category{background:var(--cream);border-radius:6px;padding:32px 28px}
+.cat-header{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
+.cat-icon{width:40px;height:40px;border-radius:50%;background:rgba(78,205,196,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cat-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--ink)}
+.cat-count{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.2em;color:var(--mid);font-weight:300;margin-top:2px}
+
+.inclusion-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.inclusion-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:13px;color:var(--ink);font-weight:300;line-height:1.4}
+.inclusion-item:last-child{border-bottom:none}
+.inclusion-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:5px}
+.inclusion-item strong{font-weight:500;color:var(--ink)}
+
+.not-included-section{padding:0 80px 80px}
+.not-included-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:32px}
+.not-included-col h4{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:16px}
+.ni-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.ni-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule);font-size:13px;color:var(--mid);font-weight:300}
+.ni-item:last-child{border-bottom:none}
+.ni-item::before{content:'';width:6px;height:6px;border-radius:2px;background:var(--rule);flex-shrink:0;margin-top:5px}
+
+.upgrade-section{padding:80px;background:var(--cream)}
+.upgrade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.upgrade-card{background:var(--white);border-radius:5px;padding:24px 20px;border:1px solid var(--rule)}
+.upgrade-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.upgrade-desc{font-size:12px;color:var(--mid);font-weight:300;line-height:1.5;margin-bottom:12px}
+.upgrade-from{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);font-weight:300}
+.upgrade-price{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--teal-d)}
+
+@media(max-width:1100px){.inclusions-grid{grid-template-columns:1fr 1fr}.upgrade-grid{grid-template-columns:1fr 1fr}.inclusions-body,.not-included-section,.upgrade-section{padding:64px 40px}.inclusions-intro{grid-template-columns:1fr 1fr;padding:44px 40px}}
+@media(max-width:640px){.inclusions-grid{grid-template-columns:1fr}.not-included-grid{grid-template-columns:1fr}.upgrade-grid{grid-template-columns:1fr 1fr}.inclusions-body,.not-included-section,.upgrade-section{padding:48px 24px}.inclusions-intro{grid-template-columns:1fr 1fr;padding:36px 24px}}
 </style>
 </head>
 <body>
 <nav>
-  <div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div>
+  <a href="index.html" class="nav-logo">
+    <svg width="36" height="34" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/><rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+    <div><div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div><span class="nav-sub">Homes</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="home-designs/index.html">Home Designs</a></li>
+    <li><a href="previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="build-process.html">Build Process</a></li>
+    <li><a href="about/index.html">About</a></li>
+    <li><a href="contact/index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
 </nav>
-<svg class="wave" width="72" height="68" viewBox="0 0 96 90" fill="none">
-  <path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5" fill="none" stroke-linejoin="round"/>
-  <rect x="14" y="42" width="68" height="32" fill="#1C2B35" opacity="0.4"/>
-  <rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.5"/>
-  <path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-</svg>
-<span class="badge">Coming Soon</span>
-<h1>Standard Inclusions</h1>
-<p>This page is currently being built. Check back soon — or head back to browse everything that's ready now.</p>
-<a href="index.html" class="btn">← Back to Home</a>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow anim anim-d1">Standard Inclusions</p>
+    <h1 class="page-title anim anim-d2">Everything you need,<br><em>included in the price</em></h1>
+    <p class="page-sub anim anim-d3">No hidden extras. Every item listed below is standard in your fixed-price Whitsunday Homes build. What you see is what you get.</p>
+  </div>
+</div>
+
+<div class="inclusions-intro">
+  <div class="intro-stat"><div class="intro-stat-num">70+</div><div class="intro-stat-label">Standard inclusions</div></div>
+  <div class="intro-stat"><div class="intro-stat-num">100%</div><div class="intro-stat-label">Fixed price guaranteed</div></div>
+  <div class="intro-stat"><div class="intro-stat-num">0</div><div class="intro-stat-label">Surprise variations</div></div>
+  <div class="intro-stat"><div class="intro-stat-num">1</div><div class="intro-stat-label">Simple contract</div></div>
+</div>
+
+<section class="inclusions-body">
+  <p class="section-eyebrow">What's Included</p>
+  <h2 class="section-title">Full inclusions list</h2>
+
+  <div class="inclusions-grid">
+
+    <div class="inclusion-category">
+      <div class="cat-header">
+        <div class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg></div>
+        <div><div class="cat-title">Structure & Exterior</div><div class="cat-count">15 inclusions</div></div>
+      </div>
+      <ul class="inclusion-list">
+        <li class="inclusion-item"><strong>Concrete slab</strong> — engineer-designed to soil classification</li>
+        <li class="inclusion-item">Termite management system (reticulation)</li>
+        <li class="inclusion-item"><strong>Steel frame</strong> — cyclone-rated wind region C</li>
+        <li class="inclusion-item">Colorbond steel roofing — choice of 12 colours</li>
+        <li class="inclusion-item">James Hardie Scyon external cladding</li>
+        <li class="inclusion-item">Rendered feature panels (Facade A & C)</li>
+        <li class="inclusion-item"><strong>Double garage</strong> with remote sectional door</li>
+        <li class="inclusion-item">Covered alfresco area with concrete floor</li>
+        <li class="inclusion-item">Insulated ceiling batts (R4.1)</li>
+        <li class="inclusion-item">Wall insulation (R2.0)</li>
+        <li class="inclusion-item">Painted eaves & fascia — 2 colours</li>
+        <li class="inclusion-item">Letterbox & house numbers</li>
+        <li class="inclusion-item">Clothesline</li>
+        <li class="inclusion-item">External garden tap</li>
+        <li class="inclusion-item">Turf & garden allowance — 300m² equivalent</li>
+      </ul>
+    </div>
+
+    <div class="inclusion-category">
+      <div class="cat-header">
+        <div class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div><div class="cat-title">Windows & Doors</div><div class="cat-count">8 inclusions</div></div>
+      </div>
+      <ul class="inclusion-list">
+        <li class="inclusion-item"><strong>Aluminium double-glazed windows</strong> — grey anodised frames</li>
+        <li class="inclusion-item">Fly screens to all windows and sliding doors</li>
+        <li class="inclusion-item">Sliding stacker door to alfresco</li>
+        <li class="inclusion-item">2340mm ceiling height — all habitable rooms</li>
+        <li class="inclusion-item">Solid-core front entry door with deadlock</li>
+        <li class="inclusion-item">Internal doors — solid panel, lever handles</li>
+        <li class="inclusion-item">Cavity sliding door to ensuite</li>
+        <li class="inclusion-item">Security screen to front entry</li>
+      </ul>
+    </div>
+
+    <div class="inclusion-category">
+      <div class="cat-header">
+        <div class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <div><div class="cat-title">Kitchen</div><div class="cat-count">12 inclusions</div></div>
+      </div>
+      <ul class="inclusion-list">
+        <li class="inclusion-item"><strong>20mm stone benchtop</strong> — choice from 8 colours</li>
+        <li class="inclusion-item">Soft-close cabinetry — choice of 6 door profiles</li>
+        <li class="inclusion-item">900mm freestanding oven — stainless steel</li>
+        <li class="inclusion-item">900mm induction cooktop</li>
+        <li class="inclusion-item">900mm rangehood — canopy style</li>
+        <li class="inclusion-item">Dishwasher — 60cm stainless steel</li>
+        <li class="inclusion-item">Undermount 1.5 bowl sink — stainless steel</li>
+        <li class="inclusion-item">Mixer tap — choice from 4 styles</li>
+        <li class="inclusion-item">Tiled splashback — choice from range</li>
+        <li class="inclusion-item">Pantry with adjustable shelving</li>
+        <li class="inclusion-item">LED under-cabinet lighting</li>
+        <li class="inclusion-item">Fridge cavity allowance — 900mm wide</li>
+      </ul>
+    </div>
+
+    <div class="inclusion-category">
+      <div class="cat-header">
+        <div class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg></div>
+        <div><div class="cat-title">Bathrooms & Ensuite</div><div class="cat-count">14 inclusions</div></div>
+      </div>
+      <ul class="inclusion-list">
+        <li class="inclusion-item"><strong>Floor-to-ceiling tiles</strong> — choice from range</li>
+        <li class="inclusion-item">Semi-frameless shower screen</li>
+        <li class="inclusion-item">Shower niche — tiled to match</li>
+        <li class="inclusion-item">600mm wall-hung vanity with stone top</li>
+        <li class="inclusion-item">Undermount basin — choice of 3 styles</li>
+        <li class="inclusion-item">Mixer taps & shower set — choice from 4 styles</li>
+        <li class="inclusion-item">Toilet suite — close-coupled</li>
+        <li class="inclusion-item">Heated towel rail — ensuite</li>
+        <li class="inclusion-item">Mirror with shaver point — above vanity</li>
+        <li class="inclusion-item">Exhaust fan with light — each bathroom</li>
+        <li class="inclusion-item">Bath — freestanding or built-in, main bathroom</li>
+        <li class="inclusion-item">Toilet roll holder & towel rail — all bathrooms</li>
+        <li class="inclusion-item">Waterproofing — all wet areas</li>
+        <li class="inclusion-item">Hot water system — 315L heat pump</li>
+      </ul>
+    </div>
+
+    <div class="inclusion-category">
+      <div class="cat-header">
+        <div class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <div><div class="cat-title">Electrical & Lighting</div><div class="cat-count">11 inclusions</div></div>
+      </div>
+      <ul class="inclusion-list">
+        <li class="inclusion-item"><strong>Ducted air conditioning</strong> — 8kW reverse cycle, 4 zones</li>
+        <li class="inclusion-item">Ceiling fans — all bedrooms & living areas</li>
+        <li class="inclusion-item">LED downlights throughout — dimmable</li>
+        <li class="inclusion-item">Pendant light allowance — kitchen & dining</li>
+        <li class="inclusion-item">TV points — living room, master bedroom</li>
+        <li class="inclusion-item">Data/internet points — living room, study</li>
+        <li class="inclusion-item">Double power points — all rooms</li>
+        <li class="inclusion-item">USB power points — kitchen & master bedroom</li>
+        <li class="inclusion-item">Smoke alarms — hard-wired, interconnected</li>
+        <li class="inclusion-item">External sensor light — front & rear</li>
+        <li class="inclusion-item">Switchboard with safety switches & surge protection</li>
+      </ul>
+    </div>
+
+    <div class="inclusion-category">
+      <div class="cat-header">
+        <div class="cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 5h6M14 9h6M14 15h6M14 19h6"/></svg></div>
+        <div><div class="cat-title">Flooring & Interior</div><div class="cat-count">10 inclusions</div></div>
+      </div>
+      <ul class="inclusion-list">
+        <li class="inclusion-item"><strong>Hybrid timber flooring</strong> — living areas, choice of 6 colours</li>
+        <li class="inclusion-item">Carpet — all bedrooms, choice of 4 colours</li>
+        <li class="inclusion-item">2-coat interior paint — choice of any Dulux colour</li>
+        <li class="inclusion-item">Cornice — 75mm cove throughout</li>
+        <li class="inclusion-item">Skirting & architraves — 67mm square edge</li>
+        <li class="inclusion-item">Built-in robes — all bedrooms, with hanging rail & shelf</li>
+        <li class="inclusion-item">Linen cupboard with 4 shelves</li>
+        <li class="inclusion-item">Laundry trough & cabinet</li>
+        <li class="inclusion-item">Laundry floor tiles</li>
+        <li class="inclusion-item">Blind allowance — all windows & sliding doors</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- NOT INCLUDED -->
+<section class="not-included-section">
+  <div style="background:var(--cream);border-radius:6px;padding:40px 36px;">
+    <p class="section-eyebrow">For Clarity</p>
+    <h2 class="section-title" style="font-size:24px;margin-bottom:28px;">What's not included in the base price</h2>
+    <div class="not-included-grid">
+      <div class="not-included-col">
+        <h4>Site-specific costs (quoted separately after site assessment)</h4>
+        <ul class="ni-list">
+          <li class="ni-item">Soil testing & geotechnical report</li>
+          <li class="ni-item">Earthworks & cut/fill beyond standard</li>
+          <li class="ni-item">Retaining walls</li>
+          <li class="ni-item">Connection of water, sewer & power to your boundary</li>
+          <li class="ni-item">Driveway (concrete or bitumen)</li>
+        </ul>
+      </div>
+      <div class="not-included-col">
+        <h4>Owner-supplied or optional items</h4>
+        <ul class="ni-list">
+          <li class="ni-item">Pool & pool fencing</li>
+          <li class="ni-item">Solar panels & battery</li>
+          <li class="ni-item">Shed or workshop</li>
+          <li class="ni-item">Fencing (boundary)</li>
+          <li class="ni-item">Refrigerator, washer, dryer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPGRADES -->
+<section class="upgrade-section">
+  <p class="section-eyebrow">Popular Upgrades</p>
+  <h2 class="section-title">Enhance your build</h2>
+  <div class="upgrade-grid">
+    <div class="upgrade-card"><div class="upgrade-name">Solar System</div><p class="upgrade-desc">6.6kW solar panel system with 5kW inverter — sized for a typical 4 bedroom home.</p><div class="upgrade-from">From</div><div class="upgrade-price">$6,800</div></div>
+    <div class="upgrade-card"><div class="upgrade-name">Alfresco Upgrade</div><p class="upgrade-desc">Extend and fully outfit your alfresco with outdoor kitchen, BBQ and ceiling fan.</p><div class="upgrade-from">From</div><div class="upgrade-price">$8,500</div></div>
+    <div class="upgrade-card"><div class="upgrade-name">Pool Package</div><p class="upgrade-desc">Fibreglass plunge pool with surrounds, fencing, pump and installation.</p><div class="upgrade-from">From</div><div class="upgrade-price">$32,000</div></div>
+    <div class="upgrade-card"><div class="upgrade-name">Stone Benchtop Upgrade</div><p class="upgrade-desc">Upgrade kitchen benchtop to 40mm premium stone — wider colour selection.</p><div class="upgrade-from">From</div><div class="upgrade-price">$2,400</div></div>
+    <div class="upgrade-card"><div class="upgrade-name">Rainwater Tank</div><p class="upgrade-desc">5,000L poly tank connected to toilets and laundry.</p><div class="upgrade-from">From</div><div class="upgrade-price">$3,200</div></div>
+    <div class="upgrade-card"><div class="upgrade-name">Home Theatre</div><p class="upgrade-desc">Dedicated media room with acoustic insulation, projector wiring pre-installed.</p><div class="upgrade-from">From</div><div class="upgrade-price">$4,800</div></div>
+    <div class="upgrade-card"><div class="upgrade-name">3-Car Garage</div><p class="upgrade-desc">Extend garage to 3-bay with additional remote door. Suits acreage designs.</p><div class="upgrade-from">From</div><div class="upgrade-price">$12,000</div></div>
+    <div class="upgrade-card"><div class="upgrade-name">Study / Home Office</div><p class="upgrade-desc">Convert spare room to fitted study with built-in desk and shelving.</p><div class="upgrade-from">From</div><div class="upgrade-price">$3,600</div></div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <p class="section-eyebrow">Ready to Talk?</p>
+  <h2 class="section-title">Get a fixed price quote today</h2>
+  <p class="cta-strip-sub">Tell us your design, block, and any upgrades you're interested in.</p>
+  <div class="cta-actions">
+    <a href="contact/index.html" class="btn-teal">Get a Free Quote</a>
+    <a href="home-designs/index.html" class="btn-outline-white">Browse Designs</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div><div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="26" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;"><span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span> <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;">Homes</span></div></div><p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p></div>
+    <div class="footer-col"><h5>Designs</h5><ul><li><a href="home-designs/index.html">All Designs</a></li><li><a href="home-designs/the-coral.html">The Coral</a></li><li><a href="home-designs/the-bowen.html">The Bowen</a></li></ul></div>
+    <div class="footer-col"><h5>Build</h5><ul><li><a href="build-process.html">Build Process</a></li><li><a href="inclusions.html">Inclusions</a></li><li><a href="previous-builds/index.html">Previous Builds</a></li><li><a href="testimonials.html">Testimonials</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="about/index.html">About Us</a></li><li><a href="locations/airlie-beach.html">Build in Airlie Beach</a></li><li><a href="contact/index.html">Get a Quote</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p><span class="qbcc-badge">QBCC Lic. No. 000000</span></div>
+</footer>
 </body>
 </html>
