@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Designs | Whitsunday Homes — Airlie Beach Builder</title>
+<meta name="description" content="Browse Whitsunday Homes' full range of home designs. Filter by bedrooms, bathrooms, and house size. Fixed price builds across the Whitsunday region.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+/* ── FILTER BAR ── */
+.filter-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-right: 1px solid var(--rule);
+  padding: 0 32px 0 0;
+  margin-right: 32px;
+}
+
+.filter-group:last-of-type {
+  border-right: none;
+}
+
+.filter-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8.5px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  white-space: nowrap;
+  margin-right: 14px;
+}
+
+.filter-pills {
+  display: flex;
+  gap: 6px;
+  padding: 16px 0;
+}
+
+.pill {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 7px 14px;
+  border-radius: 2px;
+  border: 1px solid var(--rule);
+  color: var(--mid);
+  cursor: pointer;
+  transition: all 0.18s;
+  background: transparent;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.pill:hover { border-color: var(--ink); color: var(--ink); }
+
+.pill.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: white;
+  font-weight: 600;
+}
+
+.filter-reset {
+  margin-left: auto;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  cursor: pointer;
+  padding: 16px 0 16px 24px;
+  border: none;
+  background: none;
+  transition: color 0.2s;
+}
+
+.filter-reset:hover { color: var(--ink); }
+
+.filter-count {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--mid);
+  padding: 16px 0;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+/* ── DESIGNS GRID ── */
+.designs-body {
+  padding: 52px 80px 100px;
+}
+
+.designs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.design-card {
+  background: var(--cream);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.design-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(28,43,53,0.1);
+}
+
+.design-card.hidden { display: none; }
+
+.design-card-img {
+  height: 230px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.design-card-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--ink);
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 7.5px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.design-card-type {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(250,250,248,0.9);
+  color: var(--ink);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.design-card-body { padding: 24px 22px 18px; }
+
+.design-card-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+.design-card-tagline {
+  font-size: 13px;
+  color: var(--mid);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.design-card-specs {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  flex-wrap: wrap;
+}
+
+.spec {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--mid);
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.spec-val {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.spec svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+.design-card-footer {
+  padding: 14px 22px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--rule);
+  margin-top: 18px;
+}
+
+.design-from {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 300;
+}
+
+.design-price {
+  font-family: 'Syne', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--teal-d);
+}
+
+.enquire-arrow {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── NO RESULTS ── */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 40px;
+  display: none;
+}
+
+.no-results.visible { display: block; }
+
+.no-results p {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--mid);
+  margin-bottom: 8px;
+}
+
+.no-results span {
+  font-size: 14px;
+  color: var(--rule);
+}
+
+/* ── FEATURE STRIP ── */
+.feature-strip {
+  background: var(--cream);
+  border-top: 1px solid var(--rule);
+  padding: 52px 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(78,205,196,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-item h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.feature-item p {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .designs-grid{ grid-template-columns: repeat(2,1fr); }
+  .filter-bar{ padding: 0 40px; overflow-x: auto; }
+  .designs-body{ padding: 44px 40px 80px; }
+  .feature-strip{ grid-template-columns: 1fr 1fr; padding: 44px 40px; }
+}
+@media(max-width:640px){
+  .designs-grid{ grid-template-columns: 1fr; }
+  .designs-body{ padding: 32px 24px 64px; }
+  .filter-bar{ padding: 0 16px; }
+  .feature-strip{ grid-template-columns: 1fr; padding: 40px 24px; }
+  .filter-group{ padding-right: 20px; margin-right: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <svg width="36" height="34" viewBox="0 0 96 90" fill="none">
+      <path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/>
+      <rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/>
+      <rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/>
+      <rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/>
+      <path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div>
+      <span class="nav-sub">Homes</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home Designs</a></li>
+    <li><a href="../previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="../build-process.html">Build Process</a></li>
+    <li><a href="../about/index.html">About</a></li>
+    <li><a href="../contact/index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow anim anim-d1">Home Designs</p>
+    <h1 class="page-title anim anim-d2">Find your <em>perfect</em> design</h1>
+    <p class="page-sub anim anim-d3">Browse our full range of plans — from compact coastal homes to expansive acreage builds. Filter by what matters to you.</p>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" id="filterBar">
+
+  <div class="filter-group">
+    <span class="filter-label">Bedrooms</span>
+    <div class="filter-pills" id="bedPills">
+      <button class="pill active" data-filter="bed" data-value="all">All</button>
+      <button class="pill" data-filter="bed" data-value="3">3</button>
+      <button class="pill" data-filter="bed" data-value="4">4</button>
+      <button class="pill" data-filter="bed" data-value="5">5</button>
+      <button class="pill" data-filter="bed" data-value="6">6+</button>
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <span class="filter-label">Bathrooms</span>
+    <div class="filter-pills" id="bathPills">
+      <button class="pill active" data-filter="bath" data-value="all">All</button>
+      <button class="pill" data-filter="bath" data-value="1">1</button>
+      <button class="pill" data-filter="bath" data-value="2">2</button>
+      <button class="pill" data-filter="bath" data-value="3">3+</button>
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <span class="filter-label">Size (m²)</span>
+    <div class="filter-pills" id="sizePills">
+      <button class="pill active" data-filter="size" data-value="all">All</button>
+      <button class="pill" data-filter="size" data-value="small">Under 200</button>
+      <button class="pill" data-filter="size" data-value="medium">200–280</button>
+      <button class="pill" data-filter="size" data-value="large">280–350</button>
+      <button class="pill" data-filter="size" data-value="xlarge">350+</button>
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <span class="filter-label">Type</span>
+    <div class="filter-pills" id="typePills">
+      <button class="pill active" data-filter="type" data-value="all">All</button>
+      <button class="pill" data-filter="type" data-value="single">Single</button>
+      <button class="pill" data-filter="type" data-value="double">Double</button>
+      <button class="pill" data-filter="type" data-value="acreage">Acreage</button>
+    </div>
+  </div>
+
+  <span class="filter-count" id="filterCount">Showing 8 designs</span>
+  <button class="filter-reset" id="resetBtn">Clear filters</button>
+</div>
+
+<!-- GRID -->
+<div class="designs-body">
+  <div class="designs-grid" id="designsGrid">
+
+    <!-- CARD: The Coral -->
+    <a href="the-coral.html" class="design-card"
+       data-bed="4" data-bath="2" data-size="218" data-type="single">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-coral.svg);">
+        <span class="design-card-tag">Most Popular</span>
+        <span class="design-card-type">Single Storey</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Coral</div>
+        <div class="design-card-tagline">Single storey coastal living at its finest</div>
+        <div class="design-card-specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">4</span>&nbsp;Bed</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">2</span>&nbsp;Bath</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">218</span>&nbsp;m²</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">2</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <div><div class="design-from">From</div><div class="design-price">$385,000</div></div>
+        <span class="enquire-arrow">View design →</span>
+      </div>
+    </a>
+
+    <!-- CARD: The Bowen -->
+    <a href="the-bowen.html" class="design-card"
+       data-bed="4" data-bath="2" data-size="264" data-type="acreage">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-bowen.svg);">
+        <span class="design-card-tag">Acreage Ready</span>
+        <span class="design-card-type">Single Storey</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Bowen</div>
+        <div class="design-card-tagline">Spacious rural retreat with room to breathe</div>
+        <div class="design-card-specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">4</span>&nbsp;Bed</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">2</span>&nbsp;Bath</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">264</span>&nbsp;m²</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">3</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <div><div class="design-from">From</div><div class="design-price">$448,000</div></div>
+        <span class="enquire-arrow">View design →</span>
+      </div>
+    </a>
+
+    <!-- CARD: The Airlie -->
+    <a href="the-airlie.html" class="design-card"
+       data-bed="5" data-bath="3" data-size="312" data-type="single">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-airlie.svg);">
+        <span class="design-card-tag">New Design</span>
+        <span class="design-card-type">Single Storey</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Airlie</div>
+        <div class="design-card-tagline">Modern tropical family home</div>
+        <div class="design-card-specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">5</span>&nbsp;Bed</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">3</span>&nbsp;Bath</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">312</span>&nbsp;m²</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">2</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <div><div class="design-from">From</div><div class="design-price">$512,000</div></div>
+        <span class="enquire-arrow">View design →</span>
+      </div>
+    </a>
+
+    <!-- CARD: The Whitsunday -->
+    <a href="the-whitsunday.html" class="design-card"
+       data-bed="5" data-bath="3" data-size="368" data-type="double">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-whitsunday.svg);">
+        <span class="design-card-tag">Signature Design</span>
+        <span class="design-card-type">Double Storey</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Whitsunday</div>
+        <div class="design-card-tagline">Our flagship double storey masterpiece</div>
+        <div class="design-card-specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">5</span>&nbsp;Bed</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">3</span>&nbsp;Bath</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">368</span>&nbsp;m²</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">2</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <div><div class="design-from">From</div><div class="design-price">$594,000</div></div>
+        <span class="enquire-arrow">View design →</span>
+      </div>
+    </a>
+
+    <!-- CARD: The Proserpine -->
+    <a href="the-proserpine.html" class="design-card"
+       data-bed="3" data-bath="2" data-size="178" data-type="single">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-proserpine.svg);">
+        <span class="design-card-tag">Great Value</span>
+        <span class="design-card-type">Single Storey</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Proserpine</div>
+        <div class="design-card-tagline">Smart, efficient living for first home buyers</div>
+        <div class="design-card-specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">3</span>&nbsp;Bed</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">2</span>&nbsp;Bath</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">178</span>&nbsp;m²</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">2</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <div><div class="design-from">From</div><div class="design-price">$299,000</div></div>
+        <span class="enquire-arrow">View design →</span>
+      </div>
+    </a>
+
+    <!-- CARD: The Cannonvale -->
+    <a href="the-cannonvale.html" class="design-card"
+       data-bed="4" data-bath="3" data-size="295" data-type="double">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-coral.svg);">
+        <span class="design-card-tag">Double Storey</span>
+        <span class="design-card-type">Double Storey</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Cannonvale</div>
+        <div class="design-card-tagline">Contemporary two-storey for sloping blocks</div>
+        <div class="design-card-specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">4</span>&nbsp;Bed</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">3</span>&nbsp;Bath</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">295</span>&nbsp;m²</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">2</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <div><div class="design-from">From</div><div class="design-price">$468,000</div></div>
+        <span class="enquire-arrow">View design →</span>
+      </div>
+    </a>
+
+    <!-- CARD: The Jubilee -->
+    <a href="the-jubilee.html" class="design-card"
+       data-bed="6" data-bath="3" data-size="412" data-type="acreage">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-bowen.svg);">
+        <span class="design-card-tag">Acreage XL</span>
+        <span class="design-card-type">Acreage</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Jubilee</div>
+        <div class="design-card-tagline">Expansive acreage for large families</div>
+        <div class="design-card-specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">6</span>&nbsp;Bed</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">3</span>&nbsp;Bath</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">412</span>&nbsp;m²</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">4</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <div><div class="design-from">From</div><div class="design-price">$648,000</div></div>
+        <span class="enquire-arrow">View design →</span>
+      </div>
+    </a>
+
+    <!-- CARD: The Shute -->
+    <a href="the-shute.html" class="design-card"
+       data-bed="3" data-bath="1" data-size="158" data-type="single">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-airlie.svg);">
+        <span class="design-card-tag">Starter Home</span>
+        <span class="design-card-type">Single Storey</span>
+      </div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Shute</div>
+        <div class="design-card-tagline">Compact and clever — ideal for smaller blocks</div>
+        <div class="design-card-specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg><span class="spec-val">3</span>&nbsp;Bed</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg><span class="spec-val">1</span>&nbsp;Bath</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg><span class="spec-val">158</span>&nbsp;m²</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg><span class="spec-val">1</span>&nbsp;Car</span>
+        </div>
+      </div>
+      <div class="design-card-footer">
+        <div><div class="design-from">From</div><div class="design-price">$258,000</div></div>
+        <span class="enquire-arrow">View design →</span>
+      </div>
+    </a>
+
+    <div class="no-results" id="noResults">
+      <p>No designs match those filters</p>
+      <span>Try adjusting your selection above</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- FEATURE STRIP -->
+<div class="feature-strip">
+  <div class="feature-item">
+    <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+    <div><h4>Fixed Price Guarantee</h4><p>Every design comes with a fixed-price contract. No surprise variations.</p></div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg></div>
+    <div><h4>Fully Customisable</h4><p>Every plan can be modified to suit your block, lifestyle, and budget.</p></div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+    <div><h4>Floorplan Included</h4><p>Download the full floorplan PDF for any design — no sign-up needed.</p></div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
+    <div><h4>Free Consultation</h4><p>Chat with our team about any design — no obligation, no pressure.</p></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <p class="section-eyebrow">Not sure which design?</p>
+  <h2 class="section-title">We'll help you find the right fit</h2>
+  <p class="cta-strip-sub">Tell us about your block and budget and we'll recommend the best designs for your situation.</p>
+  <div class="cta-actions">
+    <a href="../contact/index.html" class="btn-teal">Get a Free Consultation</a>
+    <a href="../previous-builds/index.html" class="btn-outline-white">See Completed Builds</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="28" height="26" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="14" y="42" width="68" height="32" fill="rgba(255,255,255,0.04)"/><rect x="14" y="42" width="6" height="32" fill="rgba(255,255,255,0.15)"/><rect x="76" y="42" width="6" height="32" fill="rgba(255,255,255,0.15)"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;"><span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span> <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;">Homes</span></div>
+      </div>
+      <p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p>
+    </div>
+    <div class="footer-col"><h5>Designs</h5><ul><li><a href="index.html">All Designs</a></li><li><a href="the-coral.html">The Coral</a></li><li><a href="the-bowen.html">The Bowen</a></li><li><a href="the-airlie.html">The Airlie</a></li><li><a href="the-whitsunday.html">The Whitsunday</a></li></ul></div>
+    <div class="footer-col"><h5>Build</h5><ul><li><a href="../build-process.html">Build Process</a></li><li><a href="../inclusions.html">Inclusions</a></li><li><a href="../previous-builds/index.html">Previous Builds</a></li><li><a href="../testimonials.html">Testimonials</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="../about/index.html">About Us</a></li><li><a href="../contact/index.html">Get a Quote</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p>
+    <span class="qbcc-badge">QBCC Lic. No. 000000</span>
+  </div>
+</footer>
+
+<script>
+const filters = { bed: 'all', bath: 'all', size: 'all', type: 'all' };
+
+function sizeCategory(m2) {
+  if (m2 < 200) return 'small';
+  if (m2 < 280) return 'medium';
+  if (m2 < 350) return 'large';
+  return 'xlarge';
+}
+
+function applyFilters() {
+  const cards = document.querySelectorAll('.design-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const bed  = parseInt(card.dataset.bed);
+    const bath = parseInt(card.dataset.bath);
+    const size = parseInt(card.dataset.size);
+    const type = card.dataset.type;
+
+    const bedOk  = filters.bed  === 'all' || (filters.bed === '6' ? bed >= 6 : bed === parseInt(filters.bed));
+    const bathOk = filters.bath === 'all' || (filters.bath === '3' ? bath >= 3 : bath === parseInt(filters.bath));
+    const sizeOk = filters.size === 'all' || sizeCategory(size) === filters.size;
+    const typeOk = filters.type === 'all' || type === filters.type;
+
+    const show = bedOk && bathOk && sizeOk && typeOk;
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  document.getElementById('filterCount').textContent = `Showing ${visible} design${visible !== 1 ? 's' : ''}`;
+  document.getElementById('noResults').classList.toggle('visible', visible === 0);
+}
+
+document.querySelectorAll('.pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const group = pill.dataset.filter;
+    document.querySelectorAll(`[data-filter="${group}"]`).forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    filters[group] = pill.dataset.value;
+    applyFilters();
+  });
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  Object.keys(filters).forEach(k => filters[k] = 'all');
+  document.querySelectorAll('.pill').forEach(p => p.classList.toggle('active', p.dataset.value === 'all'));
+  applyFilters();
+});
+</script>
+</body>
+</html>
