@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Coral — 4 Bed Home Design | Whitsunday Homes</title>
+<meta name="description" content="The Coral — a 4 bedroom, 2 bathroom single storey home design from $385,000. Built for coastal Whitsunday living. View floorplan, facades, and enquire online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+/* ── HERO ── */
+.design-hero {
+  padding-top: 68px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 88vh;
+}
+
+.design-hero-gallery {
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-main {
+  height: 100%;
+  min-height: 560px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.4s ease;
+  position: relative;
+}
+
+.gallery-thumbs {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.thumb {
+  width: 64px;
+  height: 48px;
+  border-radius: 3px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+  opacity: 0.7;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.thumb:hover, .thumb.active { border-color: var(--teal); opacity: 1; }
+
+.facade-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(28,43,53,0.75);
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+  font-weight: 400;
+  backdrop-filter: blur(4px);
+}
+
+/* ── DESIGN INFO PANEL ── */
+.design-info {
+  padding: 64px 64px 64px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--white);
+  overflow-y: auto;
+}
+
+.design-breadcrumb {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: var(--mid);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.design-breadcrumb a { color: var(--mid); text-decoration: none; transition: color 0.2s; }
+.design-breadcrumb a:hover { color: var(--ink); }
+.design-breadcrumb span { opacity: 0.4; }
+
+.design-badge {
+  display: inline-block;
+  background: rgba(78,205,196,0.12);
+  color: var(--teal-d);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.design-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.design-tagline {
+  font-size: 16px;
+  color: var(--mid);
+  font-weight: 300;
+  margin-bottom: 36px;
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+/* SPECS GRID */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-bottom: 36px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.spec-block {
+  background: var(--cream);
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.spec-block-icon { margin-bottom: 8px; }
+.spec-block-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.spec-block-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 300;
+}
+
+/* PRICING */
+.pricing-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.from-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8.5px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 4px;
+  font-weight: 300;
+}
+
+.design-price {
+  font-family: 'Syne', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--teal-d);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.price-note {
+  font-size: 12px;
+  color: var(--mid);
+  font-weight: 300;
+  line-height: 1.4;
+  max-width: 160px;
+}
+
+/* ACTIONS */
+.design-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.btn-enquire {
+  background: var(--ink);
+  color: white;
+  padding: 16px 28px;
+  border-radius: 3px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+  flex: 1;
+  text-align: center;
+}
+
+.btn-enquire:hover { background: var(--navy); }
+
+.btn-floorplan {
+  border: 1.5px solid var(--rule);
+  color: var(--ink);
+  padding: 15px 22px;
+  border-radius: 3px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-floorplan:hover { border-color: var(--ink); background: var(--cream); }
+
+/* INCLUDES PREVIEW */
+.includes-mini {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.include-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--mid);
+  font-weight: 300;
+}
+
+.include-item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+/* ── FLOORPLAN SECTION ── */
+.floorplan-section {
+  padding: 80px;
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.floorplan-img {
+  background: var(--sand);
+  border-radius: 6px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.floorplan-placeholder {
+  opacity: 0.25;
+  text-align: center;
+}
+
+.floorplan-info h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.floorplan-rooms {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 32px;
+}
+
+.room-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 13px;
+}
+
+.room-row:last-child { border-bottom: none; }
+
+.room-name {
+  font-family: 'Outfit', sans-serif;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.room-size {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mid);
+}
+
+/* ── FACADES ── */
+.facades-section {
+  padding: 80px;
+  background: var(--white);
+}
+
+.facades-section h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(24px, 2.5vw, 36px);
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.facades-sub {
+  font-size: 15px;
+  color: var(--mid);
+  font-weight: 300;
+  margin-bottom: 44px;
+}
+
+.facades-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.facade-option {
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.facade-option:hover, .facade-option.active { border-color: var(--teal); }
+
+.facade-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.facade-info {
+  padding: 14px 16px;
+  background: var(--cream);
+}
+
+.facade-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.facade-desc {
+  font-size: 11px;
+  color: var(--mid);
+  font-weight: 300;
+}
+
+/* ── ENQUIRE SECTION ── */
+.enquire-section {
+  padding: 80px;
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.enquire-info h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(24px, 2.5vw, 38px);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.enquire-info p {
+  font-size: 15px;
+  color: var(--mid);
+  font-weight: 300;
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.contact-method-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(78,205,196,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-method a {
+  color: var(--teal-d);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* FORM */
+.enquire-form {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 40px 36px;
+  border: 1px solid var(--rule);
+}
+
+.form-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8.5px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--white);
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal-d);
+}
+
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+.form-hidden {
+  background: rgba(78,205,196,0.08);
+  border: 1px solid rgba(78,205,196,0.2);
+  border-radius: 3px;
+  padding: 12px 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--teal-d);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--ink);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 3px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-submit:hover { background: var(--navy); }
+
+/* RELATED DESIGNS */
+.related-section {
+  padding: 80px;
+  background: var(--white);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.related-card {
+  background: var(--cream);
+  border-radius: 5px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.related-card:hover { transform: translateY(-3px); }
+
+.related-img {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+
+.related-body { padding: 18px 16px; }
+
+.related-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.related-specs {
+  font-size: 12px;
+  color: var(--mid);
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom: 10px;
+}
+
+.related-price {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--teal-d);
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px) {
+  .design-hero { grid-template-columns: 1fr; min-height: auto; }
+  .gallery-main { min-height: 380px; height: 380px; }
+  .design-info { padding: 48px 40px; }
+  .floorplan-section, .enquire-section { grid-template-columns: 1fr; gap: 48px; padding: 60px 40px; }
+  .facades-section { padding: 60px 40px; }
+  .related-section { padding: 60px 40px; }
+  .specs-grid { grid-template-columns: repeat(4, 1fr); }
+  .facades-grid { grid-template-columns: 1fr 1fr; }
+  .related-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:640px) {
+  .design-info { padding: 36px 24px; }
+  .specs-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-row { grid-template-columns: 1fr; }
+  .floorplan-section, .enquire-section, .facades-section, .related-section { padding: 48px 24px; }
+  .facades-grid, .related-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <svg width="36" height="34" viewBox="0 0 96 90" fill="none">
+      <path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/>
+      <rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/>
+      <rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/>
+      <rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/>
+      <path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div>
+      <span class="nav-sub">Homes</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home Designs</a></li>
+    <li><a href="../previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="../build-process.html">Build Process</a></li>
+    <li><a href="../about/index.html">About</a></li>
+    <li><a href="../contact/index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO: GALLERY + INFO -->
+<section class="design-hero">
+
+  <!-- GALLERY -->
+  <div class="design-hero-gallery">
+    <div class="gallery-main" id="galleryMain"
+         style="background-image:url(../assets/images/design-coral.svg);">
+      <span class="facade-label" id="facadeLabel">Facade A — Coastal Modern</span>
+    </div>
+    <div class="gallery-thumbs">
+      <div class="thumb active" data-img="../assets/images/design-coral.svg" data-label="Facade A — Coastal Modern"
+           style="background-image:url(../assets/images/design-coral.svg);" onclick="switchImage(this)"></div>
+      <div class="thumb" data-img="../assets/images/design-bowen.svg" data-label="Facade B — Hamptons"
+           style="background-image:url(../assets/images/design-bowen.svg);" onclick="switchImage(this)"></div>
+      <div class="thumb" data-img="../assets/images/design-airlie.svg" data-label="Facade C — Contemporary"
+           style="background-image:url(../assets/images/design-airlie.svg);" onclick="switchImage(this)"></div>
+      <div class="thumb" data-img="../assets/images/build-1.svg" data-label="Interior — Living Area"
+           style="background-image:url(../assets/images/build-1.svg);" onclick="switchImage(this)"></div>
+    </div>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div class="design-info">
+    <div class="design-breadcrumb">
+      <a href="../index.html">Home</a><span>›</span>
+      <a href="index.html">Home Designs</a><span>›</span>
+      The Coral
+    </div>
+
+    <span class="design-badge">Most Popular Design</span>
+    <h1 class="design-name">The Coral</h1>
+    <p class="design-tagline">Single storey coastal living — open, airy and designed for the Whitsunday lifestyle.</p>
+
+    <div class="specs-grid">
+      <div class="spec-block">
+        <div class="spec-block-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A9099" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg></div>
+        <div class="spec-block-val">4</div>
+        <div class="spec-block-label">Bedrooms</div>
+      </div>
+      <div class="spec-block">
+        <div class="spec-block-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A9099" stroke-width="1.5"><path d="M4 12h16M4 12V8a2 2 0 014 0v4M4 12v4h16v-4"/></svg></div>
+        <div class="spec-block-val">2</div>
+        <div class="spec-block-label">Bathrooms</div>
+      </div>
+      <div class="spec-block">
+        <div class="spec-block-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A9099" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/></svg></div>
+        <div class="spec-block-val">218</div>
+        <div class="spec-block-label">m² Total</div>
+      </div>
+      <div class="spec-block">
+        <div class="spec-block-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A9099" stroke-width="1.5"><path d="M19 9V6h-3M5 9V6h3M5 15v3h3M19 15v3h-3"/></svg></div>
+        <div class="spec-block-val">2</div>
+        <div class="spec-block-label">Car Garage</div>
+      </div>
+    </div>
+
+    <div class="pricing-row">
+      <div>
+        <div class="from-label">Fixed price from</div>
+        <div class="design-price">$385,000</div>
+      </div>
+      <p class="price-note">Includes slab, frame, lock-up, fit-out & handover. Site costs additional.</p>
+    </div>
+
+    <div class="design-actions">
+      <a href="#enquire" class="btn-enquire">Enquire About This Design</a>
+      <a href="#floorplan" class="btn-floorplan">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        View Floorplan
+      </a>
+    </div>
+
+    <div class="includes-mini">
+      <span class="include-item">Ducted air conditioning</span>
+      <span class="include-item">Stone benchtops</span>
+      <span class="include-item">Colorbond roof</span>
+      <span class="include-item">900mm kitchen appliances</span>
+      <span class="include-item">Alfresco area included</span>
+      <span class="include-item">Ceiling fans throughout</span>
+      <span class="include-item">Hybrid timber flooring</span>
+      <span class="include-item">Fly screens all windows</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- FLOORPLAN -->
+<section class="floorplan-section" id="floorplan">
+  <div class="floorplan-img">
+    <div class="floorplan-placeholder">
+      <svg width="80" height="76" viewBox="0 0 96 90" fill="none">
+        <path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5" fill="none" stroke-linejoin="round"/>
+        <rect x="14" y="42" width="68" height="32" fill="#1C2B35" opacity="0.4"/>
+        <rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.5"/>
+      </svg>
+      <p style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.3em;color:var(--mid);margin-top:14px;">Floorplan PDF</p>
+    </div>
+    <!-- Overlay floorplan SVG illustration -->
+    <svg style="position:absolute;inset:0;width:100%;height:100%;padding:32px;" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer walls -->
+      <rect x="40" y="40" width="320" height="280" stroke="#1C2B35" stroke-width="3" fill="rgba(246,242,237,0.6)"/>
+      <!-- Master bedroom -->
+      <rect x="40" y="40" width="130" height="110" stroke="#1C2B35" stroke-width="1.5" fill="rgba(232,221,208,0.5)"/>
+      <text x="105" y="102" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="9" fill="#7A9099" letter-spacing="1">MASTER</text>
+      <!-- Ensuite -->
+      <rect x="40" y="150" width="70" height="60" stroke="#1C2B35" stroke-width="1.5" fill="rgba(232,221,208,0.7)"/>
+      <text x="75" y="183" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="8" fill="#7A9099" letter-spacing="1">ENSUITE</text>
+      <!-- Bed 2 -->
+      <rect x="170" y="40" width="100" height="100" stroke="#1C2B35" stroke-width="1.5" fill="rgba(232,221,208,0.5)"/>
+      <text x="220" y="95" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="9" fill="#7A9099" letter-spacing="1">BED 2</text>
+      <!-- Bed 3 -->
+      <rect x="270" y="40" width="90" height="100" stroke="#1C2B35" stroke-width="1.5" fill="rgba(232,221,208,0.5)"/>
+      <text x="315" y="95" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="9" fill="#7A9099" letter-spacing="1">BED 3</text>
+      <!-- Bath -->
+      <rect x="270" y="140" width="90" height="70" stroke="#1C2B35" stroke-width="1.5" fill="rgba(232,221,208,0.7)"/>
+      <text x="315" y="178" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="8" fill="#7A9099" letter-spacing="1">BATH</text>
+      <!-- Living -->
+      <rect x="40" y="210" width="200" height="110" stroke="#1C2B35" stroke-width="1.5" fill="rgba(78,205,196,0.06)"/>
+      <text x="140" y="268" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="9" fill="#1C8A85" letter-spacing="1">LIVING / DINING</text>
+      <!-- Kitchen -->
+      <rect x="240" y="210" width="120" height="80" stroke="#1C2B35" stroke-width="1.5" fill="rgba(232,221,208,0.5)"/>
+      <text x="300" y="253" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="9" fill="#7A9099" letter-spacing="1">KITCHEN</text>
+      <!-- Alfresco -->
+      <rect x="40" y="320" width="200" height="60" stroke="#1C2B35" stroke-width="1" stroke-dasharray="6 3" fill="rgba(78,205,196,0.04)"/>
+      <text x="140" y="354" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="9" fill="#4ECDC4" letter-spacing="1">ALFRESCO</text>
+      <!-- Garage -->
+      <rect x="240" y="290" width="120" height="90" stroke="#1C2B35" stroke-width="1.5" fill="rgba(232,221,208,0.4)"/>
+      <text x="300" y="340" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="9" fill="#7A9099" letter-spacing="1">GARAGE</text>
+      <!-- North arrow -->
+      <text x="370" y="395" text-anchor="middle" font-family="Josefin Sans,sans-serif" font-size="8" fill="#7A9099">N ↑</text>
+    </svg>
+  </div>
+
+  <div class="floorplan-info">
+    <p class="section-eyebrow">Floor Plan</p>
+    <h2>Every room considered</h2>
+    <p style="font-size:14px;color:var(--mid);font-weight:300;margin-bottom:28px;line-height:1.65;">The Coral is designed for cross-ventilation and natural light — ideal for the Whitsunday climate. The open-plan living flows seamlessly to a covered alfresco area.</p>
+
+    <div class="floorplan-rooms">
+      <div class="room-row"><span class="room-name">Master Bedroom + Ensuite</span><span class="room-size">18.2 m²</span></div>
+      <div class="room-row"><span class="room-name">Bedroom 2</span><span class="room-size">12.4 m²</span></div>
+      <div class="room-row"><span class="room-name">Bedroom 3</span><span class="room-size">11.8 m²</span></div>
+      <div class="room-row"><span class="room-name">Bedroom 4</span><span class="room-size">11.2 m²</span></div>
+      <div class="room-row"><span class="room-name">Living / Dining</span><span class="room-size">38.6 m²</span></div>
+      <div class="room-row"><span class="room-name">Kitchen</span><span class="room-size">16.8 m²</span></div>
+      <div class="room-row"><span class="room-name">Alfresco</span><span class="room-size">22.0 m²</span></div>
+      <div class="room-row"><span class="room-name">Double Garage</span><span class="room-size">36.0 m²</span></div>
+      <div class="room-row"><span class="room-name" style="font-weight:600;color:var(--ink);">Total</span><span class="room-size" style="color:var(--teal-d);font-size:15px;">218 m²</span></div>
+    </div>
+
+    <a href="../contact/index.html?design=coral" class="btn-primary">Download Full Floorplan PDF</a>
+  </div>
+</section>
+
+<!-- FACADES -->
+<section class="facades-section">
+  <p class="section-eyebrow">Facade Options</p>
+  <h2>Three facade styles to choose from</h2>
+  <p class="facades-sub">Each facade is included in the base price. External cladding and colour selections are made during your personalisation appointment.</p>
+
+  <div class="facades-grid">
+    <div class="facade-option active" onclick="selectFacade(this, '../assets/images/design-coral.svg', 'Facade A — Coastal Modern')">
+      <div class="facade-img" style="background-image:url(../assets/images/design-coral.svg);"></div>
+      <div class="facade-info">
+        <div class="facade-name">Facade A — Coastal Modern</div>
+        <div class="facade-desc">Rendered finish, contemporary lines, square eaves</div>
+      </div>
+    </div>
+    <div class="facade-option" onclick="selectFacade(this, '../assets/images/design-bowen.svg', 'Facade B — Hamptons')">
+      <div class="facade-img" style="background-image:url(../assets/images/design-bowen.svg);"></div>
+      <div class="facade-info">
+        <div class="facade-name">Facade B — Hamptons</div>
+        <div class="facade-desc">Weatherboard feature, pitched roof, classic detailing</div>
+      </div>
+    </div>
+    <div class="facade-option" onclick="selectFacade(this, '../assets/images/design-airlie.svg', 'Facade C — Contemporary')">
+      <div class="facade-img" style="background-image:url(../assets/images/design-airlie.svg);"></div>
+      <div class="facade-info">
+        <div class="facade-name">Facade C — Contemporary</div>
+        <div class="facade-desc">Mixed material, dark accents, skillion entry</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRE FORM -->
+<section class="enquire-section" id="enquire">
+  <div class="enquire-info">
+    <p class="section-eyebrow">Enquire Now</p>
+    <h2>Interested in The Coral?</h2>
+    <p>Fill in the form and one of our team will be in touch within one business day. No pressure — just a conversation about whether this design is right for you.</p>
+    <div class="contact-methods">
+      <div class="contact-method">
+        <div class="contact-method-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+        <span>Call us: <a href="tel:0747000000">07 4700 0000</a></span>
+      </div>
+      <div class="contact-method">
+        <div class="contact-method-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <span>Email: <a href="mailto:info@whitsundayhomes.com.au">info@whitsundayhomes.com.au</a></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="enquire-form">
+    <div class="form-title">Send an enquiry</div>
+    <div class="form-hidden">Enquiry: The Coral — 4 Bed · 2 Bath · 218m²</div>
+    <div class="form-row">
+      <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"></div>
+      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+    </div>
+    <div class="form-group"><label>Email Address</label><input type="email" placeholder="jane@example.com"></div>
+    <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="04xx xxx xxx"></div>
+    <div class="form-group">
+      <label>Do you have land?</label>
+      <select>
+        <option>Yes — I have a block ready</option>
+        <option>No — I need help finding land</option>
+        <option>I'm looking at house & land packages</option>
+        <option>Not sure yet</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Suburb / Area</label>
+      <select>
+        <option>Airlie Beach</option>
+        <option>Cannonvale</option>
+        <option>Proserpine</option>
+        <option>Jubilee Pocket</option>
+        <option>Mount Julian</option>
+        <option>Other Whitsunday region</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Message (optional)</label><textarea placeholder="Tell us a little about your project..."></textarea></div>
+    <button class="form-submit">Send Enquiry</button>
+  </div>
+</section>
+
+<!-- RELATED DESIGNS -->
+<section class="related-section">
+  <p class="section-eyebrow">You Might Also Like</p>
+  <h2 class="section-title">Similar designs</h2>
+  <div class="related-grid">
+    <a href="the-bowen.html" class="related-card">
+      <div class="related-img" style="background-image:url(../assets/images/design-bowen.svg);"></div>
+      <div class="related-body">
+        <div class="related-name">The Bowen</div>
+        <div class="related-specs">4 Bed · 2 Bath · 264 m²</div>
+        <div class="related-price">From $448,000</div>
+      </div>
+    </a>
+    <a href="the-proserpine.html" class="related-card">
+      <div class="related-img" style="background-image:url(../assets/images/design-proserpine.svg);"></div>
+      <div class="related-body">
+        <div class="related-name">The Proserpine</div>
+        <div class="related-specs">3 Bed · 2 Bath · 178 m²</div>
+        <div class="related-price">From $299,000</div>
+      </div>
+    </a>
+    <a href="the-airlie.html" class="related-card">
+      <div class="related-img" style="background-image:url(../assets/images/design-airlie.svg);"></div>
+      <div class="related-body">
+        <div class="related-name">The Airlie</div>
+        <div class="related-specs">5 Bed · 3 Bath · 312 m²</div>
+        <div class="related-price">From $512,000</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="28" height="26" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;"><span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span> <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;">Homes</span></div>
+      </div>
+      <p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p>
+    </div>
+    <div class="footer-col"><h5>Designs</h5><ul><li><a href="index.html">All Designs</a></li><li><a href="the-coral.html">The Coral</a></li><li><a href="the-bowen.html">The Bowen</a></li><li><a href="the-airlie.html">The Airlie</a></li></ul></div>
+    <div class="footer-col"><h5>Build</h5><ul><li><a href="../build-process.html">Build Process</a></li><li><a href="../inclusions.html">Inclusions</a></li><li><a href="../previous-builds/index.html">Previous Builds</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="../about/index.html">About Us</a></li><li><a href="../contact/index.html">Get a Quote</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Whitsunday Homes Pty Ltd · Airlie Beach QLD 4802</p>
+    <span class="qbcc-badge">QBCC Lic. No. 000000</span>
+  </div>
+</footer>
+
+<script>
+function switchImage(thumb) {
+  document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+  document.getElementById('galleryMain').style.backgroundImage = `url(${thumb.dataset.img})`;
+  document.getElementById('facadeLabel').textContent = thumb.dataset.label;
+}
+
+function selectFacade(el, img, label) {
+  document.querySelectorAll('.facade-option').forEach(f => f.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('galleryMain').style.backgroundImage = `url(${img})`;
+  document.getElementById('facadeLabel').textContent = label;
+  document.querySelectorAll('.thumb')[0].dataset.img = img;
+  document.querySelectorAll('.thumb')[0].style.backgroundImage = `url(${img})`;
+}
+</script>
+</body>
+</html>
