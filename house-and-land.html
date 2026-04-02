@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House & Land Packages Airlie Beach | Whitsunday Homes</title>
+<meta name="description" content="House and land packages in Airlie Beach, Cannonvale and the Whitsundays. Fixed price builds on titled land — one contract, one price, no surprises.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+.hl-intro{background:var(--ink);padding:72px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;overflow:hidden}
+.hl-intro::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;border:1px solid rgba(78,205,196,0.07);pointer-events:none}
+.hl-intro-left h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3vw,42px);font-weight:800;color:white;line-height:1.1;letter-spacing:-0.02em;margin-bottom:18px}
+.hl-intro-left h2 em{color:var(--teal);font-style:normal}
+.hl-intro-left p{font-size:15px;color:rgba(255,255,255,0.45);font-weight:300;line-height:1.7;margin-bottom:28px}
+.hl-benefits{display:flex;flex-direction:column;gap:0}
+.hl-benefit{display:flex;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hl-benefit:first-child{padding-top:0}
+.hl-benefit:last-child{border-bottom:none;padding-bottom:0}
+.hl-benefit-icon{width:36px;height:36px;border-radius:50%;border:1px solid rgba(78,205,196,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.hl-benefit h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:white;margin-bottom:4px}
+.hl-benefit p{font-size:13px;color:rgba(255,255,255,0.38);font-weight:300;line-height:1.55}
+
+.packages-section{padding:80px}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.package-card{background:var(--cream);border-radius:6px;overflow:hidden;border:2px solid transparent;transition:border-color 0.2s,box-shadow 0.2s}
+.package-card:hover{border-color:var(--teal);box-shadow:0 12px 40px rgba(28,43,53,0.1)}
+.package-card.featured{border-color:var(--teal)}
+.package-img{height:200px;background-size:cover;background-position:center;position:relative}
+.package-featured-badge{position:absolute;top:14px;right:14px;background:var(--teal);color:var(--ink);font-family:'Josefin Sans',sans-serif;font-size:7.5px;letter-spacing:0.25em;text-transform:uppercase;padding:5px 10px;border-radius:2px;font-weight:700}
+.package-status{position:absolute;bottom:14px;left:14px;font-family:'Josefin Sans',sans-serif;font-size:7.5px;letter-spacing:0.25em;text-transform:uppercase;padding:5px 10px;border-radius:2px;font-weight:600}
+.package-status.available{background:rgba(78,205,196,0.15);color:var(--teal-d);border:1px solid rgba(78,205,196,0.3)}
+.package-status.sold{background:rgba(28,43,53,0.5);color:rgba(255,255,255,0.6)}
+.package-body{padding:24px 22px 16px}
+.package-location{font-family:'Josefin Sans',sans-serif;font-size:8.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal-d);font-weight:400;margin-bottom:6px}
+.package-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.package-specs{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
+.package-spec{font-size:12px;color:var(--mid);font-family:'Josefin Sans',sans-serif;display:flex;align-items:center;gap:5px}
+.package-spec strong{color:var(--ink);font-weight:600;font-size:13px}
+.package-details{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.package-detail{font-size:12.5px;color:var(--mid);font-weight:300;display:flex;align-items:center;gap:8px}
+.package-detail::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0}
+.package-footer{padding:0 22px 22px;display:flex;align-items:flex-end;justify-content:space-between}
+.package-from{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mid);font-weight:300;margin-bottom:4px}
+.package-price{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--teal-d);line-height:1;letter-spacing:-0.01em}
+.package-cta{background:var(--ink);color:white;padding:10px 18px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;font-weight:600;transition:background 0.2s;white-space:nowrap}
+.package-cta:hover{background:var(--navy)}
+
+.how-it-works-hl{background:var(--cream);padding:80px}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:52px}
+.how-step{padding:32px 28px;border-left:1px solid var(--rule)}
+.how-step:first-child{border-left:none}
+.how-num{font-family:'Syne',sans-serif;font-size:44px;font-weight:800;color:rgba(28,43,53,0.05);line-height:1;margin-bottom:12px}
+.how-icon{width:36px;height:36px;border-radius:50%;background:rgba(78,205,196,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.how-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.how-desc{font-size:13px;color:var(--mid);font-weight:300;line-height:1.6}
+
+.register-section{padding:80px;background:var(--white);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.register-info h2{font-family:'Syne',sans-serif;font-size:clamp(24px,2.5vw,36px);font-weight:800;color:var(--ink);line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px}
+.register-info p{font-size:15px;color:var(--mid);font-weight:300;line-height:1.65;margin-bottom:20px}
+.coming-soon-areas{display:flex;flex-direction:column;gap:0;margin-top:24px}
+.area-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule);font-size:13px}
+.area-row:last-child{border-bottom:none}
+.area-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--ink)}
+.area-status-tag{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.2em;padding:4px 10px;border-radius:2px;font-weight:600;text-transform:uppercase}
+.area-status-tag.available{background:rgba(78,205,196,0.12);color:var(--teal-d)}
+.area-status-tag.soon{background:rgba(28,43,53,0.06);color:var(--mid)}
+.register-form{background:var(--cream);border-radius:8px;padding:36px 32px;border:1px solid var(--rule)}
+.register-form-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.register-form-sub{font-size:13px;color:var(--mid);font-weight:300;margin-bottom:28px}
+.form-group{margin-bottom:14px}
+.form-group label{font-family:'Josefin Sans',sans-serif;font-size:8.5px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mid);font-weight:400;display:block;margin-bottom:7px}
+.form-group input,.form-group select{width:100%;padding:11px 13px;border:1px solid var(--rule);border-radius:3px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--ink);background:white;transition:border-color 0.2s;outline:none}
+.form-group input:focus,.form-group select:focus{border-color:var(--teal-d)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-submit{width:100%;background:var(--ink);color:white;border:none;padding:15px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:background 0.2s}
+.form-submit:hover{background:var(--navy)}
+
+@media(max-width:1024px){.hl-intro{grid-template-columns:1fr;gap:48px;padding:60px 40px}.packages-section,.how-it-works-hl,.register-section{padding:64px 40px}.packages-grid{grid-template-columns:1fr 1fr}.how-grid{grid-template-columns:1fr 1fr}.register-section{grid-template-columns:1fr;gap:44px}}
+@media(max-width:640px){.hl-intro,.packages-section,.how-it-works-hl,.register-section{padding:48px 24px}.packages-grid{grid-template-columns:1fr}.how-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="36" height="34" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/><rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+    <div><div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div><span class="nav-sub">Homes</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="home-designs/index.html">Home Designs</a></li>
+    <li><a href="previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="build-process.html">Build Process</a></li>
+    <li><a href="about/index.html">About</a></li>
+    <li><a href="contact/index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow anim anim-d1">House & Land Packages</p>
+    <h1 class="page-title anim anim-d2">Land sorted.<br><em>Build included.</em></h1>
+    <p class="page-sub anim anim-d3">One contract, one fixed price — land and build combined. We take care of everything from settlement to handover.</p>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="hl-intro">
+  <div class="hl-intro-left">
+    <h2>The simplest way to build in the <em>Whitsundays</em></h2>
+    <p>A house and land package means you don't need to find, buy, and manage land separately before engaging a builder. We've done the groundwork — you choose a package, sign one contract, and we handle everything else.</p>
+    <a href="contact/index.html" class="btn-teal">Register Your Interest</a>
+  </div>
+  <div class="hl-benefits">
+    <div class="hl-benefit">
+      <div class="hl-benefit-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <div><h4>One fixed price — land + build</h4><p>No separate land contract, no separate build contract. One price, one signing, no surprises.</p></div>
+    </div>
+    <div class="hl-benefit">
+      <div class="hl-benefit-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 1v8m0 0v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <div><h4>FHOG eligible</h4><p>House and land packages typically qualify for the Queensland First Home Owner Grant — up to $30,000 for new builds.</p></div>
+    </div>
+    <div class="hl-benefit">
+      <div class="hl-benefit-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+      <div><h4>Titled land ready to build</h4><p>All packages use titled land — no waiting on estates to register. Ready to settle and build immediately.</p></div>
+    </div>
+    <div class="hl-benefit">
+      <div class="hl-benefit-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+      <div><h4>Stamp duty savings</h4><p>House and land packages are generally exempt from stamp duty on the build component, reducing your upfront costs.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- PACKAGES -->
+<section class="packages-section">
+  <p class="section-eyebrow">Current Packages</p>
+  <h2 class="section-title">Available house & land packages</h2>
+
+  <div class="packages-grid">
+
+    <div class="package-card featured">
+      <div class="package-img" style="background-image:url(assets/images/design-coral.svg);">
+        <span class="package-featured-badge">Best Value</span>
+        <span class="package-status available">Available Now</span>
+      </div>
+      <div class="package-body">
+        <div class="package-location">Cannonvale · Lot 14</div>
+        <div class="package-title">The Coral on Armstrong</div>
+        <div class="package-specs">
+          <span class="package-spec"><strong>4</strong>&nbsp;Bed</span>
+          <span class="package-spec"><strong>2</strong>&nbsp;Bath</span>
+          <span class="package-spec"><strong>218</strong>&nbsp;m² house</span>
+          <span class="package-spec"><strong>512</strong>&nbsp;m² land</span>
+        </div>
+        <div class="package-details">
+          <span class="package-detail">Corner lot — extra natural light</span>
+          <span class="package-detail">Flat block — standard site costs</span>
+          <span class="package-detail">2km to Cannonvale shops</span>
+          <span class="package-detail">Titled and ready to build</span>
+        </div>
+      </div>
+      <div class="package-footer">
+        <div><div class="package-from">Total from</div><div class="package-price">$627,000</div></div>
+        <a href="contact/index.html?package=coral-armstrong" class="package-cta">Enquire</a>
+      </div>
+    </div>
+
+    <div class="package-card">
+      <div class="package-img" style="background-image:url(assets/images/design-bowen.svg);">
+        <span class="package-status available">Available Now</span>
+      </div>
+      <div class="package-body">
+        <div class="package-location">Proserpine · Lot 8</div>
+        <div class="package-title">The Bowen on Proserpine Valley</div>
+        <div class="package-specs">
+          <span class="package-spec"><strong>4</strong>&nbsp;Bed</span>
+          <span class="package-spec"><strong>2</strong>&nbsp;Bath</span>
+          <span class="package-spec"><strong>264</strong>&nbsp;m² house</span>
+          <span class="package-spec"><strong>2,400</strong>&nbsp;m² land</span>
+        </div>
+        <div class="package-details">
+          <span class="package-detail">2,400m² rural residential block</span>
+          <span class="package-detail">Flat to gently sloping</span>
+          <span class="package-detail">Town water & sewer connected</span>
+          <span class="package-detail">Room for shed or pool</span>
+        </div>
+      </div>
+      <div class="package-footer">
+        <div><div class="package-from">Total from</div><div class="package-price">$598,000</div></div>
+        <a href="contact/index.html?package=bowen-proserpine" class="package-cta">Enquire</a>
+      </div>
+    </div>
+
+    <div class="package-card">
+      <div class="package-img" style="background-image:url(assets/images/design-proserpine.svg);">
+        <span class="package-status available">Available Now</span>
+      </div>
+      <div class="package-body">
+        <div class="package-location">Cannonvale · Lot 22</div>
+        <div class="package-title">The Proserpine on Jubilee</div>
+        <div class="package-specs">
+          <span class="package-spec"><strong>3</strong>&nbsp;Bed</span>
+          <span class="package-spec"><strong>2</strong>&nbsp;Bath</span>
+          <span class="package-spec"><strong>178</strong>&nbsp;m² house</span>
+          <span class="package-spec"><strong>420</strong>&nbsp;m² land</span>
+        </div>
+        <div class="package-details">
+          <span class="package-detail">FHOG eligible — first home buyers</span>
+          <span class="package-detail">Flat standard block</span>
+          <span class="package-detail">Walking distance to schools</span>
+          <span class="package-detail">Titled and ready to settle</span>
+        </div>
+      </div>
+      <div class="package-footer">
+        <div><div class="package-from">Total from</div><div class="package-price">$449,000</div></div>
+        <a href="contact/index.html?package=proserpine-jubilee" class="package-cta">Enquire</a>
+      </div>
+    </div>
+
+    <div class="package-card">
+      <div class="package-img" style="background-image:url(assets/images/design-airlie.svg);">
+        <span class="package-status available">Available Now</span>
+      </div>
+      <div class="package-body">
+        <div class="package-location">Airlie Beach · Lot 3</div>
+        <div class="package-title">The Airlie on Shute Harbour</div>
+        <div class="package-specs">
+          <span class="package-spec"><strong>5</strong>&nbsp;Bed</span>
+          <span class="package-spec"><strong>3</strong>&nbsp;Bath</span>
+          <span class="package-spec"><strong>312</strong>&nbsp;m² house</span>
+          <span class="package-spec"><strong>620</strong>&nbsp;m² land</span>
+        </div>
+        <div class="package-details">
+          <span class="package-detail">Elevated — potential Coral Sea views</span>
+          <span class="package-detail">Sloping block (cut-and-fill included)</span>
+          <span class="package-detail">Minutes to Airlie Beach Marina</span>
+          <span class="package-detail">Titled and ready to build</span>
+        </div>
+      </div>
+      <div class="package-footer">
+        <div><div class="package-from">Total from</div><div class="package-price">$798,000</div></div>
+        <a href="contact/index.html?package=airlie-shute" class="package-cta">Enquire</a>
+      </div>
+    </div>
+
+    <div class="package-card">
+      <div class="package-img" style="background-image:url(assets/images/build-3.svg);">
+        <span class="package-status sold">Sold</span>
+      </div>
+      <div class="package-body">
+        <div class="package-location">Proserpine · Lot 5 — Sold</div>
+        <div class="package-title">The Jubilee on Valley View</div>
+        <div class="package-specs">
+          <span class="package-spec"><strong>6</strong>&nbsp;Bed</span>
+          <span class="package-spec"><strong>3</strong>&nbsp;Bath</span>
+          <span class="package-spec"><strong>412</strong>&nbsp;m² house</span>
+          <span class="package-spec"><strong>4,000</strong>&nbsp;m² land</span>
+        </div>
+        <div class="package-details">
+          <span class="package-detail">4,000m² rural acreage</span>
+          <span class="package-detail">Mountain views to the west</span>
+          <span class="package-detail">Bore water included</span>
+          <span class="package-detail">Under construction — due Q3 2025</span>
+        </div>
+      </div>
+      <div class="package-footer">
+        <div><div class="package-from">Sold for</div><div class="package-price">$988,000</div></div>
+        <a href="home-designs/the-jubilee.html" class="package-cta">View Design</a>
+      </div>
+    </div>
+
+    <div class="package-card" style="background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:420px;padding:40px 32px;">
+      <svg width="52" height="48" viewBox="0 0 96 90" fill="none" style="margin-bottom:20px;opacity:0.25"><path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="14" y="42" width="68" height="32" fill="#1C2B35" opacity="0.4"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.5"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:8px;">More packages coming</div>
+      <p style="font-size:13px;color:var(--mid);font-weight:300;line-height:1.6;margin-bottom:24px;">Register your interest below and we'll notify you when new packages are listed.</p>
+      <a href="#register" class="btn-primary" style="font-size:9px;">Register Interest</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works-hl">
+  <p class="section-eyebrow">How It Works</p>
+  <h2 class="section-title">From enquiry to handover</h2>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-num">01</div>
+      <div class="how-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
+      <div class="how-title">Choose your package</div>
+      <p class="how-desc">Browse available packages and register interest. We'll send you full details including land size, block orientation, and included design specifications.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">02</div>
+      <div class="how-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <div class="how-title">One contract signed</div>
+      <p class="how-desc">A single QBCC-compliant contract covers both the land purchase and fixed-price build. Your finance is arranged on the combined package price.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">03</div>
+      <div class="how-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg></div>
+      <div class="how-title">Colour selections</div>
+      <p class="how-desc">While approvals are processed, you attend a personalisation appointment to select colours, fixtures, and finishes from our standard inclusions range.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">04</div>
+      <div class="how-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C8A85" stroke-width="1.5"><path d="M3 10v10h18V10M2 10h20M9 10V4h6v6"/></svg></div>
+      <div class="how-title">Keys at handover</div>
+      <p class="how-desc">Construction completes and we hand over the keys. Your new home is registered in your name, fully inspected and certified, ready to move in or rent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER + COMING SOON -->
+<section class="register-section" id="register">
+  <div class="register-info">
+    <p class="section-eyebrow">Register Interest</p>
+    <h2>Stay ahead of new releases</h2>
+    <p>New house and land packages sell quickly in the Whitsunday market. Register below and we'll contact you as soon as a new package becomes available in your preferred area.</p>
+    <div class="coming-soon-areas">
+      <div class="area-row"><span class="area-name">Cannonvale — Armstrong Estate</span><span class="area-status-tag available">2 lots available</span></div>
+      <div class="area-row"><span class="area-name">Proserpine — Valley Residential</span><span class="area-status-tag available">1 lot available</span></div>
+      <div class="area-row"><span class="area-name">Airlie Beach — Hillside</span><span class="area-status-tag available">1 lot available</span></div>
+      <div class="area-row"><span class="area-name">Jubilee Pocket Estate</span><span class="area-status-tag soon">Coming Q3 2025</span></div>
+      <div class="area-row"><span class="area-name">Mount Julian Rural</span><span class="area-status-tag soon">Coming 2026</span></div>
+    </div>
+  </div>
+  <div class="register-form">
+    <div class="register-form-title">Register your interest</div>
+    <div class="register-form-sub">We'll be in touch when new packages match your requirements.</div>
+    <div class="form-row">
+      <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"></div>
+      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+    </div>
+    <div class="form-group"><label>Email</label><input type="email" placeholder="jane@example.com"></div>
+    <div class="form-group"><label>Phone</label><input type="tel" placeholder="04xx xxx xxx"></div>
+    <div class="form-group"><label>Preferred Location</label><select><option>Any location</option><option>Cannonvale</option><option>Airlie Beach</option><option>Proserpine</option><option>Jubilee Pocket</option><option>Mount Julian</option></select></div>
+    <div class="form-group"><label>Budget Range</label><select><option>Under $500,000</option><option>$500,000 – $650,000</option><option>$650,000 – $800,000</option><option>$800,000+</option></select></div>
+    <div class="form-group"><label>First Home Buyer?</label><select><option>Yes — interested in FHOG</option><option>No — upgrading or investing</option></select></div>
+    <button class="form-submit">Register Interest</button>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <p class="section-eyebrow">Have Your Own Land?</p>
+  <h2 class="section-title">We'll build on your block too</h2>
+  <p class="cta-strip-sub">House and land not your thing? We build on any block in the Whitsunday region. Same fixed price, same process.</p>
+  <div class="cta-actions">
+    <a href="home-designs/index.html" class="btn-teal">Browse Home Designs</a>
+    <a href="contact/index.html" class="btn-outline-white">Get a Quote on Your Land</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div><div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="26" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;"><span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span> <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;">Homes</span></div></div><p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p></div>
+    <div class="footer-col"><h5>Designs</h5><ul><li><a href="home-designs/index.html">All Designs</a></li><li><a href="home-designs/the-coral.html">The Coral</a></li><li><a href="home-designs/the-bowen.html">The Bowen</a></li></ul></div>
+    <div class="footer-col"><h5>Build</h5><ul><li><a href="build-process.html">Build Process</a></li><li><a href="inclusions.html">Inclusions</a></li><li><a href="house-and-land.html">House & Land</a></li><li><a href="testimonials.html">Testimonials</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="about/index.html">About Us</a></li><li><a href="locations/airlie-beach.html">Build in Airlie Beach</a></li><li><a href="contact/index.html">Get a Quote</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p><span class="qbcc-badge">QBCC Lic. No. 000000</span></div>
+</footer>
+</body>
+</html>
