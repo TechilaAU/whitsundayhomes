@@ -3,37 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Build in Proserpine | Whitsunday Homes</title>
+<title>Home Builder Proserpine | Whitsunday Homes</title>
+<meta name="description" content="Whitsunday Homes builds new homes in Proserpine and the greater Whitsunday region. Fixed price, QBCC licensed. Acreage specialists and first home buyer designs available.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Syne:wght@700;800&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Whitsunday Homes","areaServed":{"@type":"City","name":"Proserpine"},"address":{"@type":"PostalAddress","streetAddress":"123 Shute Harbour Road","addressLocality":"Airlie Beach","addressRegion":"QLD","postalCode":"4802","addressCountry":"AU"}}
+</script>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#F6F2ED;font-family:'Outfit',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center}
-nav{position:fixed;top:0;left:0;right:0;background:rgba(250,250,248,0.95);border-bottom:1px solid #DDD6CC;padding:0 40px;height:68px;display:flex;align-items:center}
-.nav-wm{font-family:'Syne',sans-serif;font-weight:800;font-size:17px}
-.nav-wm .d{color:rgba(28,43,53,0.28)}
-.nav-wm .t{color:#1C8A85}
-.badge{display:inline-block;background:rgba(78,205,196,0.12);color:#1C8A85;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.35em;text-transform:uppercase;padding:6px 16px;border-radius:2px;margin-bottom:24px;font-weight:600}
-h1{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:800;color:#1C2B35;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.1}
-p{font-size:16px;color:#7A9099;font-weight:300;max-width:420px;line-height:1.65;margin-bottom:40px}
-.btn{background:#1C2B35;color:white;padding:15px 32px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;font-weight:600;display:inline-block}
-.btn:hover{background:#1C3A4A}
-.wave{margin-bottom:32px;opacity:0.4}
+.loc-hero{padding-top:68px;display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
+.loc-hero-left{padding:80px 64px;display:flex;flex-direction:column;justify-content:center;background:var(--white)}
+.loc-hero-img{background-image:url(../assets/images/build-3.svg);background-size:cover;background-position:center;position:relative}
+.loc-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(250,250,248,0.15),transparent)}
+.loc-stats{background:var(--cream);padding:0 80px;display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule)}
+.loc-stat{padding:28px 20px;border-left:1px solid var(--rule)}
+.loc-stat:first-child{border-left:none}
+.loc-stat-val{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.loc-stat-label{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mid);font-weight:300}
+.loc-stat-sub{font-size:11px;color:var(--mid);font-weight:300;margin-top:3px}
+.loc-body{padding:80px}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:52px}
+.loc-img2{background-image:url(../assets/images/design-proserpine.svg);background-size:cover;background-position:center;border-radius:6px;height:400px}
+.loc-info h3{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:14px;letter-spacing:-0.01em}
+.loc-info p{font-size:14px;color:var(--mid);font-weight:300;line-height:1.7;margin-bottom:20px}
+.loc-info-block{background:var(--cream);border-radius:5px;padding:20px;border-left:3px solid var(--teal);margin-top:20px}
+.loc-info-block h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.loc-info-block p{font-size:13px;color:var(--mid);font-weight:300;line-height:1.6;margin-bottom:0}
+.nearby-strip{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;color:var(--mid);font-weight:300;margin-top:20px}
+.nearby-strip a{color:var(--teal-d);text-decoration:none}
+.nearby-strip a:hover{text-decoration:underline}
+.loc-designs{padding:0 80px 80px}
+.design-card{background:var(--cream);border-radius:5px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:transform 0.2s}
+.design-card:hover{transform:translateY(-3px)}
+.design-card-img{height:180px;background-size:cover;background-position:center}
+.design-card-body{padding:18px 16px 12px}
+.design-card-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.design-card-specs-text{font-size:12px;color:var(--mid);font-weight:300}
+.design-card-footer2{padding:10px 16px 18px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule)}
+.design-from2{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.25em;text-transform:uppercase;color:var(--mid);font-weight:300}
+.design-price2{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--teal-d)}
+.designs-grid-loc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+@media(max-width:1024px){.loc-hero{grid-template-columns:1fr}.loc-hero-img{height:320px}.loc-stats{grid-template-columns:1fr 1fr;padding:0 40px}.loc-body,.loc-designs{padding:64px 40px}.loc-grid{grid-template-columns:1fr;gap:40px}}
+@media(max-width:640px){.loc-body,.loc-designs{padding:48px 24px}.loc-stats{grid-template-columns:1fr 1fr;padding:0 24px}.designs-grid-loc{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav>
-  <div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div>
+  <a href="../index.html" class="nav-logo"><svg width="36" height="34" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/><rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg><div><div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div><span class="nav-sub">Homes</span></div></a>
+  <ul class="nav-links">
+    <li><a href="../home-designs/index.html">Home Designs</a></li>
+    <li><a href="../previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="../build-process.html">Build Process</a></li>
+    <li><a href="../about/index.html">About</a></li>
+    <li><a href="../contact/index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
 </nav>
-<svg class="wave" width="72" height="68" viewBox="0 0 96 90" fill="none">
-  <path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5" fill="none" stroke-linejoin="round"/>
-  <rect x="14" y="42" width="68" height="32" fill="#1C2B35" opacity="0.4"/>
-  <rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.5"/>
-  <path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-</svg>
-<span class="badge">Coming Soon</span>
-<h1>Build in Proserpine</h1>
-<p>This page is currently being built. Check back soon — or head back to browse everything that's ready now.</p>
-<a href="../index.html" class="btn">← Back to Home</a>
+
+<div class="loc-hero">
+  <div class="loc-hero-left">
+    <p class="page-eyebrow anim anim-d1">Proserpine, QLD 4800</p>
+    <h1 class="page-title anim anim-d2">Build your home in<br><em>Proserpine</em></h1>
+    <p class="page-sub anim anim-d3">Proserpine is the inland hub of the Whitsunday region — known for larger blocks, more affordable land, and a tight-knit community. We regularly build here for first home buyers, acreage owners, and families looking for more space at a lower price point than the coast.</p>
+    <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+      <a href="../contact/index.html" class="btn-primary">Get a Quote</a>
+      <a href="../home-designs/index.html" class="btn-ghost">Browse Designs</a>
+    </div>
+  </div>
+  <div class="loc-hero-img"></div>
+</div>
+
+<div class="loc-stats">
+  <div class="loc-stat"><div class="loc-stat-val">~3,200</div><div class="loc-stat-label">Population</div><div class="loc-stat-sub">Proserpine township</div></div>
+<div class="loc-stat"><div class="loc-stat-val">Flat to rural acreage</div><div class="loc-stat-label">Block Type</div><div class="loc-stat-sub">Larger blocks than coast</div></div>
+<div class="loc-stat"><div class="loc-stat-val">C2 — Cyclone Rating</div><div class="loc-stat-label">Wind Region</div><div class="loc-stat-sub">All builds engineered to C2</div></div>
+<div class="loc-stat"><div class="loc-stat-val">30–40% lower</div><div class="loc-stat-label">Land Prices</div><div class="loc-stat-sub">vs Airlie Beach coastal blocks</div></div>
+
+</div>
+
+<section class="loc-body">
+  <p class="section-eyebrow">Building in Proserpine</p>
+  <h2 class="section-title">What you need to know</h2>
+  <div class="loc-grid">
+    <div class="loc-img2"></div>
+    <div class="loc-info">
+      <h3>Site & terrain</h3>
+      <p>Proserpine sits in the Pioneer Valley with predominantly flat terrain — ideal for single-storey designs and acreage builds. Larger block sizes mean more flexibility with design orientation, shed placement, and landscaping. Soil classifications vary across the township; we include a soil test in every Proserpine site assessment.</p>
+      <div class="loc-info-block">
+        <h4>Council & planning</h4>
+        <p>Proserpine sits within the Whitsunday Regional Council planning area. Rural residential and acreage lots may require additional assessments for bushfire overlay or rural zone setbacks. We're experienced with both township and rural builds in this area.</p>
+      </div>
+      <div class="nearby-strip" style="margin-top:24px;">
+        <span style="font-weight:600;color:var(--ink);">Also building near Proserpine:</span> <a href="airlie-beach.html">Airlie Beach</a> · <a href="cannonvale.html">Cannonvale</a> · <a href="bowen.html">Bowen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="loc-designs">
+  <p class="section-eyebrow">Popular in Proserpine</p>
+  <h2 class="section-title">Designs that suit this area</h2>
+  <div class="designs-grid-loc">
+    <a href="../home-designs/the-proserpine.html" class="design-card">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-proserpine.svg);"></div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Proserpine</div>
+        <div class="design-card-specs-text">3 Bed · 2 Bath · 178 m²</div>
+      </div>
+      <div class="design-card-footer2"><span class="design-from2">From</span><span class="design-price2">$299,000</span></div>
+    </a>
+    <a href="../home-designs/the-bowen.html" class="design-card">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-bowen.svg);"></div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Bowen</div>
+        <div class="design-card-specs-text">4 Bed · 2 Bath · 264 m² · Acreage</div>
+      </div>
+      <div class="design-card-footer2"><span class="design-from2">From</span><span class="design-price2">$448,000</span></div>
+    </a>
+    <a href="../home-designs/the-jubilee.html" class="design-card">
+      <div class="design-card-img" style="background-image:url(../assets/images/design-coral.svg);"></div>
+      <div class="design-card-body">
+        <div class="design-card-name">The Jubilee</div>
+        <div class="design-card-specs-text">6 Bed · 3 Bath · 412 m²</div>
+      </div>
+      <div class="design-card-footer2"><span class="design-from2">From</span><span class="design-price2">$648,000</span></div>
+    </a></div>
+  <div style="margin-top:28px;"><a href="../home-designs/index.html" class="btn-ghost">View all home designs</a></div>
+</section>
+
+<div class="cta-strip">
+  <p class="section-eyebrow">Ready to Build in Proserpine?</p>
+  <h2 class="section-title">Let's talk about your block</h2>
+  <p class="cta-strip-sub">We'll assess your land and give you a fixed price — no obligation.</p>
+  <div class="cta-actions">
+    <a href="../contact/index.html" class="btn-teal">Get a Free Quote</a>
+    <a href="../previous-builds/index.html" class="btn-outline-white">See Previous Builds</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div><div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="26" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;"><span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span> <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;">Homes</span></div></div><p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p></div>
+    <div class="footer-col"><h5>Designs</h5><ul><li><a href="../home-designs/index.html">All Designs</a></li><li><a href="../home-designs/the-coral.html">The Coral</a></li><li><a href="../home-designs/the-bowen.html">The Bowen</a></li></ul></div>
+    <div class="footer-col"><h5>Build</h5><ul><li><a href="../build-process.html">Build Process</a></li><li><a href="../inclusions.html">Inclusions</a></li><li><a href="../previous-builds/index.html">Previous Builds</a></li></ul></div>
+    <div class="footer-col"><h5>Locations</h5><ul><li><a href="airlie-beach.html">Airlie Beach</a></li><li><a href="cannonvale.html">Cannonvale</a></li><li><a href="proserpine.html">Proserpine</a></li><li><a href="../contact/index.html">Get a Quote</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p><span class="qbcc-badge">QBCC Lic. No. 000000</span></div>
+</footer>
 </body>
 </html>
