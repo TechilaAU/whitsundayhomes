@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get a Quote | Whitsunday Homes — Contact Us</title>
+<meta name="description" content="Contact Whitsunday Homes for a free quote on your new home build. Based in Airlie Beach, QLD. Call, email or fill in the enquiry form.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+/* CONTACT LAYOUT */
+.contact-body {
+  padding-top: 68px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* LEFT — INFO */
+.contact-left {
+  background: var(--ink);
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-left::before {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  border: 1px solid rgba(78,205,196,0.07);
+  pointer-events: none;
+}
+
+.contact-left .section-eyebrow { color: rgba(78,205,196,0.7); }
+.contact-left .section-eyebrow::before { background: var(--teal); }
+
+.contact-left h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 800;
+  color: white;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.contact-left h1 em { color: var(--teal); font-style: normal; }
+
+.contact-intro {
+  font-size: 15px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 48px;
+  max-width: 380px;
+}
+
+/* CONTACT METHODS */
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 52px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.contact-method:first-child { padding-top: 0; }
+.contact-method:last-child { border-bottom: none; padding-bottom: 0; }
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(78,205,196,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-method-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.contact-method-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: 400;
+}
+
+.contact-method-value a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+/* HOURS */
+.hours-block {
+  background: rgba(255,255,255,0.04);
+  border-radius: 5px;
+  padding: 24px 28px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.hours-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.hours-row:last-child { border-bottom: none; }
+.hours-day { color: rgba(255,255,255,0.5); font-weight: 300; }
+.hours-time { color: rgba(255,255,255,0.8); font-weight: 400; }
+
+/* RIGHT — FORM */
+.contact-right {
+  background: var(--cream);
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 44px 40px;
+  border: 1px solid var(--rule);
+}
+
+.form-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.form-subtitle {
+  font-size: 13px;
+  color: var(--mid);
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8.5px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--white);
+  transition: border-color 0.2s;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal-d);
+  box-shadow: 0 0 0 3px rgba(28,138,133,0.08);
+}
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+/* BUDGET RANGE SLIDER */
+.budget-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.budget-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--teal-d);
+}
+
+.budget-label-r {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: var(--mid);
+  text-transform: uppercase;
+}
+
+.form-group input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--rule);
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.form-group input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--ink);
+  color: white;
+  border: none;
+  padding: 17px;
+  border-radius: 3px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 4px;
+}
+
+.form-submit:hover { background: var(--navy); }
+
+.form-privacy {
+  font-size: 11px;
+  color: var(--mid);
+  font-weight: 300;
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* MAP STRIP */
+.map-strip {
+  background: var(--sand);
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-placeholder {
+  text-align: center;
+  opacity: 0.4;
+}
+
+.map-address {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .contact-body{ grid-template-columns:1fr; }
+  .contact-left{ padding:60px 40px; }
+  .contact-right{ padding:60px 40px; }
+}
+@media(max-width:640px){
+  .contact-left, .contact-right{ padding:48px 24px; }
+  .form-card{ padding:32px 24px; }
+  .form-row{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <svg width="36" height="34" viewBox="0 0 96 90" fill="none">
+      <path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/>
+      <rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/>
+      <rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/>
+      <rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/>
+      <path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div>
+      <span class="nav-sub">Homes</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../home-designs/index.html">Home Designs</a></li>
+    <li><a href="../previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="../build-process.html">Build Process</a></li>
+    <li><a href="../about/index.html">About</a></li>
+    <li><a href="index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<div class="contact-body">
+
+  <!-- LEFT: INFO -->
+  <div class="contact-left">
+    <p class="section-eyebrow">Contact Us</p>
+    <h1>Let's talk about<br><em>your build</em></h1>
+    <p class="contact-intro">Whether you've got a block of land ready to go or you're just starting to think about building — we'd love to hear from you. No obligation, no pressure.</p>
+
+    <div class="contact-methods">
+      <div class="contact-method">
+        <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+        <div>
+          <div class="contact-method-label">Phone</div>
+          <div class="contact-method-value"><a href="tel:0747000000">07 4700 0000</a></div>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+        <div>
+          <div class="contact-method-label">Email</div>
+          <div class="contact-method-value"><a href="mailto:info@whitsundayhomes.com.au">info@whitsundayhomes.com.au</a></div>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div>
+          <div class="contact-method-label">Office</div>
+          <div class="contact-method-value">123 Shute Harbour Road<br>Airlie Beach QLD 4802</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hours-block">
+      <div class="hours-title">Office Hours</div>
+      <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-time">8:00am – 5:00pm</span></div>
+      <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00am – 12:00pm</span></div>
+      <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">By appointment</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: FORM -->
+  <div class="contact-right">
+    <div class="form-card">
+      <div class="form-title">Get a free quote</div>
+      <div class="form-subtitle">We'll respond within one business day</div>
+
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+      </div>
+
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="jane@example.com"></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="04xx xxx xxx"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Build Location</label>
+          <select>
+            <option>Airlie Beach</option>
+            <option>Cannonvale</option>
+            <option>Proserpine</option>
+            <option>Jubilee Pocket</option>
+            <option>Mount Julian</option>
+            <option>Other Whitsunday region</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Design Interest</label>
+          <select id="designSelect">
+            <option>Not sure yet</option>
+            <option>The Coral (4 Bed · $385k)</option>
+            <option>The Bowen (4 Bed Acreage · $448k)</option>
+            <option>The Airlie (5 Bed · $512k)</option>
+            <option>The Whitsunday (5 Bed Double · $594k)</option>
+            <option>The Proserpine (3 Bed · $299k)</option>
+            <option>The Cannonvale (4 Bed Double · $468k)</option>
+            <option>The Jubilee (6 Bed Acreage · $648k)</option>
+            <option>The Shute (3 Bed · $258k)</option>
+            <option>Custom / bring my own plans</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Do you have land?</label>
+        <select>
+          <option>Yes — I have a block ready</option>
+          <option>No — I need help finding land</option>
+          <option>I'm looking at house & land packages</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <div class="budget-display">
+          <div>
+            <div style="font-family:'Josefin Sans',sans-serif;font-size:8.5px;letter-spacing:0.3em;color:var(--mid);text-transform:uppercase;margin-bottom:4px;">Budget</div>
+            <div class="budget-val" id="budgetVal">$400,000</div>
+          </div>
+          <span class="budget-label-r">drag to adjust</span>
+        </div>
+        <input type="range" min="200000" max="800000" step="10000" value="400000" id="budgetSlider">
+      </div>
+
+      <div class="form-group">
+        <label>Timeline</label>
+        <select>
+          <option>Ready to start now</option>
+          <option>Within 3 months</option>
+          <option>3–6 months away</option>
+          <option>6–12 months away</option>
+          <option>Just exploring for now</option>
+        </select>
+      </div>
+
+      <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your project, block size, any specific requirements..."></textarea></div>
+
+      <button class="form-submit">Send Enquiry</button>
+      <p class="form-privacy">Your details are kept private and never shared. We'll only contact you about your enquiry.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- MAP -->
+<div class="map-strip">
+  <div class="map-placeholder">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1C2B35" stroke-width="1">
+      <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+      <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+    </svg>
+    <p style="font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.3em;color:var(--mid);margin-top:10px;">Google Map embed</p>
+  </div>
+  <div class="map-address">123 Shute Harbour Rd · Airlie Beach QLD 4802</div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="26" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;"><span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span> <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;">Homes</span></div></div>
+      <p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p>
+    </div>
+    <div class="footer-col"><h5>Designs</h5><ul><li><a href="../home-designs/index.html">All Designs</a></li><li><a href="../home-designs/the-coral.html">The Coral</a></li></ul></div>
+    <div class="footer-col"><h5>Build</h5><ul><li><a href="../build-process.html">Build Process</a></li><li><a href="../previous-builds/index.html">Previous Builds</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="../about/index.html">About Us</a></li><li><a href="index.html">Get a Quote</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Whitsunday Homes Pty Ltd · Airlie Beach QLD 4802</p>
+    <span class="qbcc-badge">QBCC Lic. No. 000000</span>
+  </div>
+</footer>
+
+<script>
+const slider = document.getElementById('budgetSlider');
+const display = document.getElementById('budgetVal');
+
+slider.addEventListener('input', () => {
+  const val = parseInt(slider.value);
+  display.textContent = '$' + val.toLocaleString('en-AU');
+});
+
+// Pre-fill design from URL
+const params = new URLSearchParams(window.location.search);
+const design = params.get('design');
+if (design) {
+  const sel = document.getElementById('designSelect');
+  for (let opt of sel.options) {
+    if (opt.text.toLowerCase().includes(design.toLowerCase())) {
+      opt.selected = true;
+      break;
+    }
+  }
+}
+</script>
+</body>
+</html>
