@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building Tips & Advice | Whitsunday Homes Blog</title>
+<meta name="description" content="Building advice, cost guides, and local insights from Whitsunday Homes. Everything you need to know about building in Airlie Beach and the Whitsundays.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+.blog-grid{display:grid;grid-template-columns:2fr 1fr;gap:52px;padding:72px 80px;align-items:start}
+.blog-main{}
+.blog-sidebar{position:sticky;top:92px}
+
+/* FEATURED POST */
+.post-featured{margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid var(--rule)}
+.post-featured-img{height:360px;background-size:cover;background-position:center;border-radius:6px;margin-bottom:28px}
+.post-category{font-family:'Josefin Sans',sans-serif;font-size:8.5px;letter-spacing:0.35em;text-transform:uppercase;color:var(--teal-d);font-weight:400;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.post-category::before{content:'';width:14px;height:1px;background:var(--teal)}
+.post-title{font-family:'Syne',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:800;color:var(--ink);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+.post-title a{text-decoration:none;color:inherit;transition:color 0.2s}
+.post-title a:hover{color:var(--teal-d)}
+.post-excerpt{font-size:15px;color:var(--mid);font-weight:300;line-height:1.7;margin-bottom:20px}
+.post-meta{display:flex;align-items:center;gap:20px;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);font-weight:300}
+
+/* POST LIST */
+.post-list{display:flex;flex-direction:column;gap:32px}
+.post-card{display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:start}
+.post-card-img{height:110px;background-size:cover;background-position:center;border-radius:4px;flex-shrink:0}
+.post-card-cat{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal-d);font-weight:400;margin-bottom:7px}
+.post-card-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:8px}
+.post-card-title a{text-decoration:none;color:inherit;transition:color 0.2s}
+.post-card-title a:hover{color:var(--teal-d)}
+.post-card-excerpt{font-size:13px;color:var(--mid);font-weight:300;line-height:1.6;margin-bottom:10px}
+.post-card-meta{font-family:'Josefin Sans',sans-serif;font-size:8.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid);font-weight:300}
+.post-divider{height:1px;background:var(--rule);margin:4px 0}
+
+/* SIDEBAR */
+.sidebar-block{background:var(--cream);border-radius:6px;padding:24px 22px;margin-bottom:20px}
+.sidebar-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.sidebar-cats{list-style:none;display:flex;flex-direction:column;gap:0}
+.sidebar-cats li a{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--rule);font-size:13px;color:var(--ink);text-decoration:none;font-weight:300;transition:color 0.2s}
+.sidebar-cats li:last-child a{border-bottom:none}
+.sidebar-cats li a:hover{color:var(--teal-d)}
+.sidebar-cats li a span{font-family:'Josefin Sans',sans-serif;font-size:9px;color:var(--mid)}
+.sidebar-cta{background:var(--ink);border-radius:6px;padding:28px 22px;text-align:center}
+.sidebar-cta h4{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:white;margin-bottom:8px}
+.sidebar-cta p{font-size:13px;color:rgba(255,255,255,0.45);font-weight:300;margin-bottom:20px;line-height:1.5}
+.sidebar-cta a{display:block;background:var(--teal);color:var(--ink);padding:12px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;font-weight:700;transition:background 0.2s}
+.sidebar-cta a:hover{background:#3dbdb5}
+
+.popular-posts{list-style:none;display:flex;flex-direction:column;gap:0}
+.popular-posts li{padding:10px 0;border-bottom:1px solid var(--rule)}
+.popular-posts li:last-child{border-bottom:none}
+.popular-posts li a{font-size:13px;color:var(--ink);text-decoration:none;font-weight:300;line-height:1.4;transition:color 0.2s;display:block}
+.popular-posts li a:hover{color:var(--teal-d)}
+
+@media(max-width:1100px){.blog-grid{grid-template-columns:1fr;padding:56px 40px}.blog-sidebar{position:static}}
+@media(max-width:640px){.blog-grid{padding:44px 24px}.post-card{grid-template-columns:1fr}.post-card-img{height:160px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <svg width="36" height="34" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/><rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+    <div><div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div><span class="nav-sub">Homes</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../home-designs/index.html">Home Designs</a></li>
+    <li><a href="../previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="../build-process.html">Build Process</a></li>
+    <li><a href="../about/index.html">About</a></li>
+    <li><a href="../contact/index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow anim anim-d1">Building Tips & Advice</p>
+    <h1 class="page-title anim anim-d2">Everything you need to know<br>about <em>building in the Whitsundays</em></h1>
+    <p class="page-sub anim anim-d3">Honest advice from a builder who's been here for 15 years. Cost guides, process explainers, and local market insights.</p>
+  </div>
+</div>
+
+<div class="blog-grid">
+  <main class="blog-main">
+
+    <!-- FEATURED -->
+    <div class="post-featured">
+      <div class="post-featured-img" style="background-image:url(../assets/images/build-1.svg);"></div>
+      <div class="post-category">Cost Guide</div>
+      <h2 class="post-title"><a href="cost-to-build-airlie-beach.html">How much does it cost to build a house in Airlie Beach in 2025?</a></h2>
+      <p class="post-excerpt">If you're researching building costs in the Whitsunday region, you've probably encountered a wide range of figures. Here's an honest breakdown of what it actually costs to build in Airlie Beach and Cannonvale — based on what we're quoting right now, not 2-year-old data.</p>
+      <div class="post-meta">
+        <span>James Calloway</span>
+        <span>·</span>
+        <span>March 2025</span>
+        <span>·</span>
+        <span>8 min read</span>
+      </div>
+    </div>
+
+    <!-- POST LIST -->
+    <div class="post-list">
+
+      <div class="post-card">
+        <div class="post-card-img" style="background-image:url(../assets/images/build-3.svg);"></div>
+        <div>
+          <div class="post-card-cat">First Home Buyers</div>
+          <h3 class="post-card-title"><a href="first-home-owner-grant-whitsundays.html">First Home Owner Grant in the Whitsundays — what you need to know for 2025</a></h3>
+          <p class="post-card-excerpt">Queensland's First Home Owner Grant is worth up to $30,000 on a new build. Here's who qualifies, how to apply, and how to make sure your build is eligible.</p>
+          <div class="post-card-meta">March 2025 · 5 min read</div>
+        </div>
+      </div>
+
+      <div class="post-divider"></div>
+
+      <div class="post-card">
+        <div class="post-card-img" style="background-image:url(../assets/images/build-4.svg);"></div>
+        <div>
+          <div class="post-card-cat">Design Advice</div>
+          <h3 class="post-card-title"><a href="building-on-sloping-land-whitsundays.html">Building on a sloping block in the Whitsundays — what you need to know</a></h3>
+          <p class="post-card-excerpt">Most blocks in Airlie Beach are sloping. Here's how to choose the right design, what the site costs really are, and how to turn a challenging block into a home with amazing views.</p>
+          <div class="post-card-meta">February 2025 · 6 min read</div>
+        </div>
+      </div>
+
+      <div class="post-divider"></div>
+
+      <div class="post-card">
+        <div class="post-card-img" style="background-image:url(../assets/images/design-coral.svg);"></div>
+        <div>
+          <div class="post-card-cat">Tropical Building</div>
+          <h3 class="post-card-title"><a href="cyclone-rated-homes-whitsundays.html">Building cyclone-rated homes in the Whitsundays — what wind region C means for your build</a></h3>
+          <p class="post-card-excerpt">Every home built in the Whitsunday region must meet Wind Region C requirements. Here's what that means in practice, how it affects your design, and why it matters more than most builders let on.</p>
+          <div class="post-card-meta">January 2025 · 7 min read</div>
+        </div>
+      </div>
+
+      <div class="post-divider"></div>
+
+      <div class="post-card">
+        <div class="post-card-img" style="background-image:url(../assets/images/build-5.svg);"></div>
+        <div>
+          <div class="post-card-cat">Process</div>
+          <h3 class="post-card-title"><a href="how-long-to-build-whitsundays.html">How long does it take to build a home in the Whitsundays?</a></h3>
+          <p class="post-card-excerpt">The honest answer to the most common question we get. From first call to handover — including what actually takes the longest and how to speed things up on your end.</p>
+          <div class="post-card-meta">December 2024 · 4 min read</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="blog-sidebar">
+    <div class="sidebar-cta">
+      <h4>Ready to build?</h4>
+      <p>Get a free, fixed-price quote from your local Whitsunday builder.</p>
+      <a href="../contact/index.html">Get a Free Quote →</a>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title">Categories</div>
+      <ul class="sidebar-cats">
+        <li><a href="#">Cost Guides <span>3</span></a></li>
+        <li><a href="#">First Home Buyers <span>2</span></a></li>
+        <li><a href="#">Design Advice <span>4</span></a></li>
+        <li><a href="#">Tropical Building <span>3</span></a></li>
+        <li><a href="#">Build Process <span>2</span></a></li>
+        <li><a href="#">Locations <span>3</span></a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title">Popular Posts</div>
+      <ul class="popular-posts">
+        <li><a href="cost-to-build-airlie-beach.html">How much does it cost to build in Airlie Beach?</a></li>
+        <li><a href="first-home-owner-grant-whitsundays.html">First Home Owner Grant — Whitsundays 2025</a></li>
+        <li><a href="building-on-sloping-land-whitsundays.html">Building on a sloping block</a></li>
+        <li><a href="cyclone-rated-homes-whitsundays.html">Cyclone-rated homes explained</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-title">Browse Designs</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
+        <a href="../home-designs/the-coral.html" style="display:flex;justify-content:space-between;font-size:13px;color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--rule);font-weight:300;transition:color 0.2s;">The Coral <span style="color:var(--teal-d);font-family:'Syne',sans-serif;font-weight:700;font-size:13px;">$385k</span></a>
+        <a href="../home-designs/the-bowen.html" style="display:flex;justify-content:space-between;font-size:13px;color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--rule);font-weight:300;">The Bowen <span style="color:var(--teal-d);font-family:'Syne',sans-serif;font-weight:700;font-size:13px;">$448k</span></a>
+        <a href="../home-designs/the-airlie.html" style="display:flex;justify-content:space-between;font-size:13px;color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--rule);font-weight:300;">The Airlie <span style="color:var(--teal-d);font-family:'Syne',sans-serif;font-weight:700;font-size:13px;">$512k</span></a>
+        <a href="../home-designs/index.html" style="font-size:12px;color:var(--teal-d);text-decoration:none;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:6px;margin-top:4px;">All designs →</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div><div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="26" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;"><span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span> <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;">Homes</span></div></div><p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p></div>
+    <div class="footer-col"><h5>Designs</h5><ul><li><a href="../home-designs/index.html">All Designs</a></li><li><a href="../home-designs/the-coral.html">The Coral</a></li><li><a href="../home-designs/the-bowen.html">The Bowen</a></li></ul></div>
+    <div class="footer-col"><h5>Build</h5><ul><li><a href="../build-process.html">Build Process</a></li><li><a href="../inclusions.html">Inclusions</a></li><li><a href="../previous-builds/index.html">Previous Builds</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="../about/index.html">About Us</a></li><li><a href="../contact/index.html">Get a Quote</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Whitsunday Homes Pty Ltd · Airlie Beach QLD 4802</p><span class="qbcc-badge">QBCC Lic. No. 000000</span></div>
+</footer>
+</body>
+</html>
