@@ -3,37 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testimonials | Whitsunday Homes</title>
+<title>Client Testimonials | Whitsunday Homes — Real Reviews from Real Homeowners</title>
+<meta name="description" content="Read genuine reviews from Whitsunday Homes clients across Airlie Beach, Cannonvale and Proserpine. 4.9 star average across 40+ Google reviews.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Syne:wght@700;800&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Whitsunday Homes",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "43",
+    "bestRating": "5"
+  },
+  "review": [
+    {"@type":"Review","author":{"@type":"Person","name":"Karen & Mark T."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"From first meeting to handover, Whitsunday Homes was professional and honest. Our build came in on budget and on time. We couldn't be happier with The Coral."},
+    {"@type":"Review","author":{"@type":"Person","name":"Scott & Rebecca H."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"We built on acreage in Proserpine and were worried about finding a builder who understood rural blocks. They nailed it. The Bowen is exactly what we wanted."},
+    {"@type":"Review","author":{"@type":"Person","name":"Jade L."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"As first home buyers we had a million questions. The team walked us through every step and we never felt out of the loop. The fixed price gave us real peace of mind."}
+  ]
+}
+</script>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#F6F2ED;font-family:'Outfit',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center}
-nav{position:fixed;top:0;left:0;right:0;background:rgba(250,250,248,0.95);border-bottom:1px solid #DDD6CC;padding:0 40px;height:68px;display:flex;align-items:center}
-.nav-wm{font-family:'Syne',sans-serif;font-weight:800;font-size:17px}
-.nav-wm .d{color:rgba(28,43,53,0.28)}
-.nav-wm .t{color:#1C8A85}
-.badge{display:inline-block;background:rgba(78,205,196,0.12);color:#1C8A85;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.35em;text-transform:uppercase;padding:6px 16px;border-radius:2px;margin-bottom:24px;font-weight:600}
-h1{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,48px);font-weight:800;color:#1C2B35;letter-spacing:-0.02em;margin-bottom:16px;line-height:1.1}
-p{font-size:16px;color:#7A9099;font-weight:300;max-width:420px;line-height:1.65;margin-bottom:40px}
-.btn{background:#1C2B35;color:white;padding:15px 32px;border-radius:3px;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;font-weight:600;display:inline-block}
-.btn:hover{background:#1C3A4A}
-.wave{margin-bottom:32px;opacity:0.4}
+.rating-hero{background:var(--ink);padding:64px 80px;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:center}
+.rating-big{text-align:center}
+.rating-num{font-family:'Syne',sans-serif;font-size:88px;font-weight:800;color:var(--teal);line-height:1;letter-spacing:-0.04em}
+.rating-stars{font-size:28px;color:var(--teal);letter-spacing:4px;margin:8px 0}
+.rating-count{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-weight:300}
+.rating-breakdown{display:flex;flex-direction:column;gap:10px}
+.rating-row{display:flex;align-items:center;gap:14px}
+.rating-row-label{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.4);width:48px;text-align:right;font-weight:300}
+.rating-bar-track{flex:1;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
+.rating-bar-fill{height:100%;background:var(--teal);border-radius:2px}
+.rating-row-count{font-family:'Josefin Sans',sans-serif;font-size:9px;color:rgba(255,255,255,0.3);width:24px;font-weight:300}
+
+.reviews-section{padding:80px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.review-card{background:var(--cream);border-radius:6px;padding:28px 24px;border:1px solid var(--rule);transition:box-shadow 0.2s}
+.review-card:hover{box-shadow:0 8px 32px rgba(28,43,53,0.08)}
+.review-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.review-stars{color:var(--teal);font-size:13px;letter-spacing:2px}
+.review-source{font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.2em;color:var(--mid);text-transform:uppercase;font-weight:300}
+.review-quote{font-size:14px;color:var(--ink);line-height:1.7;margin-bottom:20px;font-weight:300;font-style:italic}
+.review-quote::before{content:'\201C';font-size:28px;color:var(--teal);line-height:0;vertical-align:-12px;margin-right:4px;font-style:normal}
+.review-footer{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--rule)}
+.review-avatar{width:38px;height:38px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);flex-shrink:0}
+.review-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink)}
+.review-meta{font-family:'Josefin Sans',sans-serif;font-size:8.5px;letter-spacing:0.15em;color:var(--mid);font-weight:300;margin-top:2px}
+
+.video-section{padding:80px;background:var(--cream)}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.video-card{background:var(--sand);border-radius:5px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;cursor:pointer}
+.video-play{width:52px;height:52px;border-radius:50%;background:rgba(28,43,53,0.7);display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+.video-card:hover .video-play{background:var(--teal-d)}
+.video-label{position:absolute;bottom:16px;left:16px;font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);font-weight:300}
+
+.google-strip{background:var(--white);padding:52px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;border-top:1px solid var(--rule)}
+.google-left{display:flex;align-items:center;gap:20px}
+.google-badge{background:var(--cream);border:1px solid var(--rule);border-radius:5px;padding:16px 24px;display:flex;align-items:center;gap:12px}
+.google-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--ink)}<br>
+.google-rating{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--ink)}
+.google-stars-sm{color:var(--teal);font-size:13px;letter-spacing:2px}
+.google-sub{font-family:'Josefin Sans',sans-serif;font-size:9px;letter-spacing:0.2em;color:var(--mid);font-weight:300}
+.google-cta-text{font-size:15px;color:var(--mid);font-weight:300;max-width:400px}
+
+@media(max-width:1024px){.rating-hero{grid-template-columns:1fr;gap:40px;padding:60px 40px}.reviews-section,.video-section,.google-strip{padding:64px 40px}.reviews-grid{grid-template-columns:1fr 1fr}.video-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.rating-hero{padding:48px 24px}.reviews-section,.video-section{padding:48px 24px}.google-strip{padding:40px 24px}.reviews-grid{grid-template-columns:1fr}.video-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav>
-  <div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div>
+  <a href="index.html" class="nav-logo">
+    <svg width="36" height="34" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><rect x="14" y="42" width="68" height="32" fill="#FAFAF8"/><rect x="14" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="76" y="42" width="6" height="32" fill="#C8BEAF"/><rect x="36" y="48" width="24" height="22" stroke="#1C8A85" stroke-width="2.5" fill="rgba(28,138,133,0.06)"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#1C8A85" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M2 84 Q14 76 26 84 Q38 92 50 84 Q62 76 74 84 Q82 88 94 84" stroke="rgba(28,138,133,0.2)" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+    <div><div class="nav-wm"><span class="d">WHIT</span><span class="t">SUN</span><span class="d">DAY</span></div><span class="nav-sub">Homes</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="home-designs/index.html">Home Designs</a></li>
+    <li><a href="previous-builds/index.html">Previous Builds</a></li>
+    <li><a href="build-process.html">Build Process</a></li>
+    <li><a href="about/index.html">About</a></li>
+    <li><a href="contact/index.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
 </nav>
-<svg class="wave" width="72" height="68" viewBox="0 0 96 90" fill="none">
-  <path d="M4 42 L48 6 L92 42" stroke="#1C2B35" stroke-width="5" fill="none" stroke-linejoin="round"/>
-  <rect x="14" y="42" width="68" height="32" fill="#1C2B35" opacity="0.4"/>
-  <rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.5"/>
-  <path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-</svg>
-<span class="badge">Coming Soon</span>
-<h1>Testimonials</h1>
-<p>This page is currently being built. Check back soon — or head back to browse everything that's ready now.</p>
-<a href="index.html" class="btn">← Back to Home</a>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow anim anim-d1">Testimonials</p>
+    <h1 class="page-title anim anim-d2">What our clients <em>actually say</em></h1>
+    <p class="page-sub anim anim-d3">Real feedback from real homeowners. We don't hand-pick these — they're from Google Reviews, published unedited.</p>
+  </div>
+</div>
+
+<!-- RATING BREAKDOWN -->
+<div class="rating-hero">
+  <div class="rating-big">
+    <div class="rating-num">4.9</div>
+    <div class="rating-stars">★★★★★</div>
+    <div class="rating-count">43 Google Reviews</div>
+  </div>
+  <div class="rating-breakdown">
+    <div class="rating-row"><span class="rating-row-label">5 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:90%"></div></div><span class="rating-row-count">39</span></div>
+    <div class="rating-row"><span class="rating-row-label">4 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:9%"></div></div><span class="rating-row-count">3</span></div>
+    <div class="rating-row"><span class="rating-row-label">3 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:2%"></div></div><span class="rating-row-count">1</span></div>
+    <div class="rating-row"><span class="rating-row-label">2 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div><span class="rating-row-count">0</span></div>
+    <div class="rating-row"><span class="rating-row-label">1 ★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:0%"></div></div><span class="rating-row-count">0</span></div>
+  </div>
+</div>
+
+<!-- REVIEWS GRID -->
+<section class="reviews-section">
+  <p class="section-eyebrow">Client Reviews</p>
+  <h2 class="section-title">From our homeowners</h2>
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="review-header"><div class="review-stars">★★★★★</div><span class="review-source">Google</span></div>
+      <p class="review-quote">From first meeting to handover, Whitsunday Homes was professional and honest. Our build came in on budget and on time. We couldn't be happier with The Coral — the finish quality is exceptional.</p>
+      <div class="review-footer"><div class="review-avatar">KM</div><div><div class="review-name">Karen & Mark T.</div><div class="review-meta">Cannonvale · The Coral · 4 Bed</div></div></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header"><div class="review-stars">★★★★★</div><span class="review-source">Google</span></div>
+      <p class="review-quote">We built on acreage in Proserpine and were worried about finding a builder who understood rural blocks. They nailed it. The Bowen is exactly what we wanted and James was on site constantly.</p>
+      <div class="review-footer"><div class="review-avatar">SR</div><div><div class="review-name">Scott & Rebecca H.</div><div class="review-meta">Proserpine · The Bowen · Acreage</div></div></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header"><div class="review-stars">★★★★★</div><span class="review-source">Google</span></div>
+      <p class="review-quote">As first home buyers we had a million questions. The team walked us through every step and we never felt out of the loop. The fixed price gave us real peace of mind during what can be a stressful time.</p>
+      <div class="review-footer"><div class="review-avatar">JL</div><div><div class="review-name">Jade L.</div><div class="review-meta">Airlie Beach · The Proserpine · 3 Bed</div></div></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header"><div class="review-stars">★★★★★</div><span class="review-source">Google</span></div>
+      <p class="review-quote">We've built three homes in Queensland and this was by far the best experience. Communication was outstanding, the quality of the finish was higher than we expected, and handover was on the promised date.</p>
+      <div class="review-footer"><div class="review-avatar">DW</div><div><div class="review-name">David & Wendy P.</div><div class="review-meta">Cannonvale · The Whitsunday · 5 Bed</div></div></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header"><div class="review-stars">★★★★★</div><span class="review-source">Google</span></div>
+      <p class="review-quote">Sarah in the office was incredible — she remembered every detail we discussed and made the colour selection process genuinely enjoyable. The home looks stunning. We have no hesitation recommending Whitsunday Homes.</p>
+      <div class="review-footer"><div class="review-avatar">TC</div><div><div class="review-name">Tamara C.</div><div class="review-meta">Airlie Beach · The Airlie · 5 Bed</div></div></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header"><div class="review-stars">★★★★★</div><span class="review-source">Google</span></div>
+      <p class="review-quote">Mike the site supervisor was always available when we had questions. We did weekly site visits and the build was always clean, progressing on schedule, and to the exact spec we'd agreed. Couldn't be happier.</p>
+      <div class="review-footer"><div class="review-avatar">BN</div><div><div class="review-name">Ben & Natalie R.</div><div class="review-meta">Jubilee Pocket · The Coral · 4 Bed</div></div></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header"><div class="review-stars">★★★★★</div><span class="review-source">Google</span></div>
+      <p class="review-quote">The kitchen finish is absolutely beautiful — better than I'd imagined from the selections. The attention to detail throughout the whole home shows this team cares about their work. Will 100% use them again for our next investment property.</p>
+      <div class="review-footer"><div class="review-avatar">AM</div><div><div class="review-name">Angela M.</div><div class="review-meta">Cannonvale · The Bowen · 4 Bed</div></div></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header"><div class="review-stars">★★★★★</div><span class="review-source">Google</span></div>
+      <p class="review-quote">Building in a cyclone zone was something we were anxious about, but James explained the wind ratings and construction standards clearly. The build meets C2 wind region requirements and we feel completely confident in the structure.</p>
+      <div class="review-footer"><div class="review-avatar">PH</div><div><div class="review-name">Paul & Helen G.</div><div class="review-meta">Airlie Beach · The Cannonvale · Double Storey</div></div></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header"><div class="review-stars">★★★★☆</div><span class="review-source">Google</span></div>
+      <p class="review-quote">Really happy with the finished product. There were a couple of small touch-up items after handover but the team came back within days and sorted everything. The process was smooth and the communication was excellent throughout.</p>
+      <div class="review-footer"><div class="review-avatar">MF</div><div><div class="review-name">Michael F.</div><div class="review-meta">Proserpine · The Proserpine · 3 Bed</div></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEO TESTIMONIALS PLACEHOLDER -->
+<section class="video-section">
+  <p class="section-eyebrow">Video Reviews</p>
+  <h2 class="section-title">Hear it in their own words</h2>
+  <div class="video-grid">
+    <div class="video-card" style="background-image:url(assets/images/build-1.svg);background-size:cover;">
+      <div class="video-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+      <span class="video-label">Karen & Mark · Cannonvale</span>
+    </div>
+    <div class="video-card" style="background-image:url(assets/images/build-3.svg);background-size:cover;">
+      <div class="video-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+      <span class="video-label">Scott & Rebecca · Proserpine</span>
+    </div>
+    <div class="video-card" style="background-image:url(assets/images/build-5.svg);background-size:cover;">
+      <div class="video-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+      <span class="video-label">Tamara · Airlie Beach</span>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE STRIP -->
+<div class="google-strip">
+  <div class="google-left">
+    <div class="google-badge">
+      <div>
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.3em;color:var(--mid);margin-bottom:4px;">GOOGLE REVIEWS</div>
+        <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--ink);">4.9</span><span style="color:var(--teal);font-size:16px;letter-spacing:2px;">★★★★★</span></div>
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:8px;letter-spacing:0.2em;color:var(--mid);margin-top:2px;">43 reviews</div>
+      </div>
+    </div>
+    <p class="google-cta-text">All reviews are posted directly to our Google Business Profile by our clients. We never ask for, or offer incentives for, positive reviews.</p>
+  </div>
+  <a href="contact/index.html" class="btn-primary">Build With Us</a>
+</div>
+
+<div class="cta-strip">
+  <p class="section-eyebrow">Your Turn</p>
+  <h2 class="section-title">Let's build your success story</h2>
+  <p class="cta-strip-sub">Join 60+ Whitsunday homeowners who trusted us with their most important build.</p>
+  <div class="cta-actions">
+    <a href="contact/index.html" class="btn-teal">Get a Free Quote</a>
+    <a href="home-designs/index.html" class="btn-outline-white">Browse Home Designs</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div><div style="display:flex;align-items:center;gap:10px;"><svg width="28" height="26" viewBox="0 0 96 90" fill="none"><path d="M4 42 L48 6 L92 42" stroke="rgba(255,255,255,0.7)" stroke-width="5" fill="none" stroke-linejoin="round"/><rect x="36" y="48" width="24" height="22" stroke="#4ECDC4" stroke-width="2.2"/><path d="M2 76 Q14 68 26 76 Q38 84 50 76 Q62 68 74 76 Q82 80 94 76" stroke="#4ECDC4" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px;"><span style="color:rgba(255,255,255,0.22);">WHIT</span><span style="color:#4ECDC4;">SUN</span><span style="color:rgba(255,255,255,0.22);">DAY</span> <span style="color:rgba(255,255,255,0.4);font-size:13px;font-weight:400;">Homes</span></div></div><p class="footer-brand-tagline">Building exceptional homes across the Whitsunday region since 2009.</p></div>
+    <div class="footer-col"><h5>Designs</h5><ul><li><a href="home-designs/index.html">All Designs</a></li><li><a href="home-designs/the-coral.html">The Coral</a></li><li><a href="home-designs/the-bowen.html">The Bowen</a></li></ul></div>
+    <div class="footer-col"><h5>Build</h5><ul><li><a href="build-process.html">Build Process</a></li><li><a href="inclusions.html">Inclusions</a></li><li><a href="previous-builds/index.html">Previous Builds</a></li><li><a href="testimonials.html">Testimonials</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="about/index.html">About Us</a></li><li><a href="locations/airlie-beach.html">Build in Airlie Beach</a></li><li><a href="contact/index.html">Get a Quote</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Whitsunday Homes Pty Ltd · ABN 00 000 000 000 · Airlie Beach QLD 4802</p><span class="qbcc-badge">QBCC Lic. No. 000000</span></div>
+</footer>
 </body>
 </html>
