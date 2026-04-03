@@ -369,16 +369,6 @@
     <li><a href="index.html" class="nav-cta">Get a Quote</a></li>
   </ul>
   <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-
-  <div class="nav-drawer" id="navDrawer">
-  <a href="../home-designs/index.html" class="nav-drawer-link">Home Designs</a>
-  <a href="../previous-builds/index.html" class="nav-drawer-link">Previous Builds</a>
-  <a href="../build-process.html" class="nav-drawer-link">Build Process</a>
-  <a href="../about/index.html" class="nav-drawer-link">About</a>
-  <a href="../house-and-land.html" class="nav-drawer-link">House &amp; Land</a>
-  <a href="../blog/index.html" class="nav-drawer-link">Blog</a>
-  <a href="../contact/index.html" class="nav-drawer-cta">Get a Free Quote</a>
-</div>
 </nav>
 
 <div class="contact-body">
@@ -562,33 +552,45 @@ if (design) {
 <script>
 (function(){
   var toggle = document.querySelector('#navToggle');
-  var drawer = document.getElementById('navDrawer');
-  if(!toggle || !drawer) return;
-  toggle.addEventListener('click', function(){
-    var isOpen = drawer.classList.toggle('open');
-    toggle.classList.toggle('open', isOpen);
-    // Force correct styles on iOS Safari
-    if(isOpen){
-      drawer.style.display = 'flex';
-      drawer.style.position = 'fixed';
-      drawer.style.top = '68px';
-      drawer.style.left = '0';
-      drawer.style.right = '0';
-      drawer.style.bottom = '0';
-      drawer.style.zIndex = '9999';
-      document.body.style.overflow = 'hidden';
-    } else {
-      drawer.style.display = 'none';
-      document.body.style.overflow = '';
-    }
+  if(!toggle) return;
+  
+  // Build drawer and append to body to escape all stacking contexts
+  var drawer = document.createElement('div');
+  drawer.id = 'mobileNavDrawer';
+  drawer.style.cssText = 'display:none;position:fixed;top:68px;left:0;right:0;bottom:0;z-index:99999;background:#1C2B35;flex-direction:column;overflow-y:auto;-webkit-overflow-scrolling:touch;';
+  
+  var links = [["../home-designs/index.html","Home Designs"],["../previous-builds/index.html","Previous Builds"],["../build-process.html","Build Process"],["../inclusions.html","Inclusions"],["../house-and-land.html","House &amp; Land"],["../testimonials.html","Testimonials"],["../about/index.html","About Us"],["../blog/index.html","Blog"]];
+  links.forEach(function(l){
+    var a = document.createElement('a');
+    a.href = l[0];
+    a.innerHTML = l[1] + '<span style="float:right;opacity:0.4">→</span>';
+    a.style.cssText = 'display:block;padding:20px 28px;border-bottom:1px solid rgba(255,255,255,0.08);font-family:Josefin Sans,sans-serif;font-size:12px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.8);text-decoration:none;';
+    a.addEventListener('click', close);
+    drawer.appendChild(a);
   });
-  drawer.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      drawer.classList.remove('open');
-      toggle.classList.remove('open');
-      drawer.style.display = 'none';
-      document.body.style.overflow = '';
-    });
+  
+  var cta = document.createElement('a');
+  cta.href = '../contact/index.html';
+  cta.textContent = 'Get a Free Quote';
+  cta.style.cssText = 'display:block;margin:28px 24px;padding:18px;background:#4ECDC4;color:#1C2B35;text-align:center;font-family:Josefin Sans,sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:3px;';
+  cta.addEventListener('click', close);
+  drawer.appendChild(cta);
+  
+  document.body.appendChild(drawer);
+  
+  function open(){
+    drawer.style.display = 'flex';
+    toggle.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    drawer.style.display = 'none';
+    toggle.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  
+  toggle.addEventListener('click', function(){
+    drawer.style.display === 'flex' ? close() : open();
   });
 })();
 </script>
