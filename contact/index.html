@@ -474,7 +474,7 @@
           </div>
           <span class="budget-label-r">drag to adjust</span>
         </div>
-        <input type="range" min="350000" max="1000000" step="10000" value="350000" id="budgetSlider">
+        <input type="range" min="350000" max="1100000" step="10000" value="350000" id="budgetSlider">
       </div>
 
       <div class="form-group">
@@ -532,7 +532,7 @@ const display = document.getElementById('budgetVal');
 
 slider.addEventListener('input', () => {
   const val = parseInt(slider.value);
-  display.textContent = '$' + val.toLocaleString('en-AU');
+  display.textContent = val >= 1100000 ? '$1,000,000+' : '$' + val.toLocaleString('en-AU');
 });
 
 // Pre-fill design from URL
