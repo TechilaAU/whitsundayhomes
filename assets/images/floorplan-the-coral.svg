@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" font-family="sans-serif">
+  <rect width="800" height="600" fill="#F6F2ED"/>
+  <!-- Title bar -->
+  <rect width="800" height="48" fill="#1C2B35"/>
+  <text x="20" y="30" font-size="13" font-weight="700" fill="white" letter-spacing="1">THE CORAL — FLOOR PLAN</text>
+  <text x="780" y="30" font-size="10" fill="#4ECDC4" text-anchor="end" letter-spacing="2">WHITSUNDAY HOMES</text>
+  <rect x="20" y="68" width="160" height="120" fill="#EEF4F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="100" y="122" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">MASTER</text>
+  <text x="100" y="138" font-size="9" fill="#7A9099" text-anchor="middle">18.2m²</text>
+  <rect x="20" y="188" width="80" height="70" fill="#E8F0F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="60" y="217" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">ENSUITE</text>
+  <rect x="100" y="188" width="80" height="70" fill="#F4F0EA" stroke="#1C2B35" stroke-width="2"/>
+  <text x="140" y="217" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">WIR</text>
+  <rect x="200" y="68" width="130" height="110" fill="#EEF4F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="265" y="117" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">BED 2</text>
+  <text x="265" y="133" font-size="9" fill="#7A9099" text-anchor="middle">12.4m²</text>
+  <rect x="350" y="68" width="130" height="110" fill="#EEF4F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="415" y="117" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">BED 3</text>
+  <text x="415" y="133" font-size="9" fill="#7A9099" text-anchor="middle">11.8m²</text>
+  <rect x="500" y="68" width="120" height="110" fill="#EEF4F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="560" y="117" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">BED 4</text>
+  <text x="560" y="133" font-size="9" fill="#7A9099" text-anchor="middle">11.2m²</text>
+  <rect x="200" y="178" width="90" height="80" fill="#E8F0F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="245" y="212" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">BATH</text>
+  <rect x="290" y="178" width="80" height="80" fill="#F4F0EA" stroke="#1C2B35" stroke-width="2"/>
+  <text x="330" y="212" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">LAUNDRY</text>
+  <rect x="20" y="278" width="310" height="160" fill="#FAFAF8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="175" y="352" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">LIVING / DINING</text>
+  <text x="175" y="368" font-size="9" fill="#7A9099" text-anchor="middle">38.6m²</text>
+  <rect x="330" y="278" width="160" height="160" fill="#F8F4EC" stroke="#1C2B35" stroke-width="2"/>
+  <text x="410" y="352" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">KITCHEN</text>
+  <text x="410" y="368" font-size="9" fill="#7A9099" text-anchor="middle">16.8m²</text>
+  <rect x="20" y="438" width="310" height="80" fill="#EEF8EC" stroke="#1C2B35" stroke-width="2"/>
+  <text x="175" y="472" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">ALFRESCO</text>
+  <text x="175" y="488" font-size="9" fill="#7A9099" text-anchor="middle">22m²</text>
+  <rect x="500" y="278" width="160" height="180" fill="#EEEAE4" stroke="#1C2B35" stroke-width="2"/>
+  <text x="580" y="362" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">GARAGE</text>
+  <text x="580" y="378" font-size="9" fill="#7A9099" text-anchor="middle">36m²</text>
+  <g transform="translate(764,550)">
+    <circle cx="0" cy="0" r="18" fill="white" stroke="#DDD6CC" stroke-width="1"/>
+    <polygon points="0,-13 -5,8 0,4 5,8" fill="#1C2B35"/>
+    <text x="0" y="20" font-size="9" fill="#7A9099" text-anchor="middle">N</text>
+  </g>
+  <line x1="20" y1="580" x2="120" y2="580" stroke="#1C2B35" stroke-width="2"/>
+  <line x1="20" y1="575" x2="20" y2="585" stroke="#1C2B35" stroke-width="2"/>
+  <line x1="120" y1="575" x2="120" y2="585" stroke="#1C2B35" stroke-width="2"/>
+  <text x="70" y="594" font-size="9" fill="#7A9099" text-anchor="middle">10 METRES</text>
+</svg>

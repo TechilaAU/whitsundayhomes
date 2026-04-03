@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" font-family="sans-serif">
+  <rect width="800" height="600" fill="#F6F2ED"/>
+  <!-- Title bar -->
+  <rect width="800" height="48" fill="#1C2B35"/>
+  <text x="20" y="30" font-size="13" font-weight="700" fill="white" letter-spacing="1">THE JUBILEE — FLOOR PLAN</text>
+  <text x="780" y="30" font-size="10" fill="#4ECDC4" text-anchor="end" letter-spacing="2">WHITSUNDAY HOMES</text>
+  <rect x="20" y="68" width="200" height="140" fill="#EEF4F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="120" y="132" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">MASTER SUITE</text>
+  <text x="120" y="148" font-size="9" fill="#7A9099" text-anchor="middle">28m²</text>
+  <rect x="20" y="208" width="100" height="75" fill="#E8F0F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="70" y="239" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">ENSUITE</text>
+  <rect x="120" y="208" width="100" height="75" fill="#F4F0EA" stroke="#1C2B35" stroke-width="2"/>
+  <text x="170" y="239" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">WIR</text>
+  <rect x="240" y="68" width="130" height="120" fill="#EEF4F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="305" y="122" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">BED 2</text>
+  <text x="305" y="138" font-size="9" fill="#7A9099" text-anchor="middle">14.4m²</text>
+  <rect x="390" y="68" width="130" height="120" fill="#EEF4F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="455" y="122" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">BED 3</text>
+  <text x="455" y="138" font-size="9" fill="#7A9099" text-anchor="middle">13.8m²</text>
+  <rect x="540" y="68" width="125" height="120" fill="#EEF4F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="602" y="122" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">BED 4</text>
+  <text x="602" y="138" font-size="9" fill="#7A9099" text-anchor="middle">13.2m²</text>
+  <rect x="680" y="68" width="90" height="120" fill="#EEF4F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="725" y="122" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">BED 5</text>
+  <text x="725" y="138" font-size="9" fill="#7A9099" text-anchor="middle">12.6m²</text>
+  <rect x="240" y="188" width="95" height="95" fill="#E8F0F8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="287" y="229" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">BATH</text>
+  <rect x="335" y="188" width="80" height="95" fill="#F4F0EA" stroke="#1C2B35" stroke-width="2"/>
+  <text x="375" y="229" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">LAUNDRY</text>
+  <rect x="20" y="303" width="300" height="180" fill="#FAFAF8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="170" y="387" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">MAIN LIVING</text>
+  <text x="170" y="403" font-size="9" fill="#7A9099" text-anchor="middle">44m²</text>
+  <rect x="335" y="303" width="200" height="180" fill="#F0EEF8" stroke="#1C2B35" stroke-width="2"/>
+  <text x="435" y="387" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">LOUNGE</text>
+  <text x="435" y="403" font-size="9" fill="#7A9099" text-anchor="middle">26m²</text>
+  <rect x="550" y="303" width="170" height="130" fill="#EAE8F4" stroke="#1C2B35" stroke-width="2"/>
+  <text x="635" y="362" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">MEDIA</text>
+  <text x="635" y="378" font-size="9" fill="#7A9099" text-anchor="middle">20m²</text>
+  <rect x="20" y="483" width="300" height="50" fill="#F8F4EC" stroke="#1C2B35" stroke-width="2"/>
+  <text x="170" y="502" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">KITCHEN + SCULLERY</text>
+  <text x="170" y="518" font-size="9" fill="#7A9099" text-anchor="middle">22m²</text>
+  <rect x="550" y="438" width="220" height="90" fill="#EEEAE4" stroke="#1C2B35" stroke-width="2"/>
+  <text x="660" y="477" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">4-BAY GARAGE + WORKSHOP</text>
+  <text x="660" y="493" font-size="9" fill="#7A9099" text-anchor="middle">72m²</text>
+  <rect x="20" y="533" width="520" height="0" fill="#EEF8EC" stroke="#1C2B35" stroke-width="2"/>
+  <text x="280" y="527" font-size="11" fill="#1C2B35" text-anchor="middle" font-weight="600">FULL VERANDAH</text>
+  <text x="280" y="543" font-size="9" fill="#7A9099" text-anchor="middle">56m²</text>
+  <g transform="translate(764,550)">
+    <circle cx="0" cy="0" r="18" fill="white" stroke="#DDD6CC" stroke-width="1"/>
+    <polygon points="0,-13 -5,8 0,4 5,8" fill="#1C2B35"/>
+    <text x="0" y="20" font-size="9" fill="#7A9099" text-anchor="middle">N</text>
+  </g>
+  <line x1="20" y1="580" x2="120" y2="580" stroke="#1C2B35" stroke-width="2"/>
+  <line x1="20" y1="575" x2="20" y2="585" stroke="#1C2B35" stroke-width="2"/>
+  <line x1="120" y1="575" x2="120" y2="585" stroke="#1C2B35" stroke-width="2"/>
+  <text x="70" y="594" font-size="9" fill="#7A9099" text-anchor="middle">10 METRES</text>
+</svg>

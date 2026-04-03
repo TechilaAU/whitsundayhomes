@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+  <!-- Sky gradient -->
+  <defs>
+    <linearGradient id="skyTheAirlie" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8DEF0"/>
+      <stop offset="100%" stop-color="#E8F4FF"/>
+    </linearGradient>
+    <linearGradient id="shadowTheAirlie" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.15)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#skyTheAirlie)"/>
+  <!-- Ground -->
+  <rect x="0" y="370" width="800" height="110" fill="#7A9E78"/>
+  <rect x="0" y="370" width="800" height="8" fill="#6B8E69"/>
+  <!-- Driveway -->
+  <polygon points="280,370 340,480 460,480 520,370" fill="#C8C0B0"/>
+
+  <!-- Wide single storey tropical -->
+  <rect x="60" y="200" width="680" height="170" fill="#F5F0E8" stroke="#1C2B35" stroke-width="2"/>
+  <!-- Wide skillion roof -->
+  <polygon points="40,200 40,160 760,185 760,200" fill="#1C2B35" opacity="0.85"/>
+  <!-- Deep eaves / overhangs -->
+  <rect x="30" y="158" width="740" height="10" fill="#E8E0D0" stroke="#1C2B35" stroke-width="1"/>
+  <!-- Louvre panels throughout -->
+  <rect x="70" y="215" width="120" height="80" fill="#C8D8E8" stroke="#1C2B35" stroke-width="1.5"/>
+  <line x1="70" y1="232" x2="190" y2="232" stroke="#1C2B35" stroke-width="0.8"/>
+  <line x1="70" y1="248" x2="190" y2="248" stroke="#1C2B35" stroke-width="0.8"/>
+  <line x1="70" y1="264" x2="190" y2="264" stroke="#1C2B35" stroke-width="0.8"/>
+  <line x1="70" y1="280" x2="190" y2="280" stroke="#1C2B35" stroke-width="0.8"/>
+  <!-- Garage -->
+  <rect x="70" y="295" width="180" height="75" fill="#1C2B35" opacity="0.8"/>
+  <line x1="70" y1="320" x2="250" y2="320" stroke="#333" stroke-width="1"/>
+  <line x1="70" y1="344" x2="250" y2="344" stroke="#333" stroke-width="1"/>
+  <rect x="158" y="295" width="2" height="75" fill="#333"/>
+  <!-- Full width stacking door -->
+  <rect x="270" y="210" width="220" height="130" fill="#BDD8E8" stroke="#1C2B35" stroke-width="1.5" opacity="0.7"/>
+  <line x1="325" y1="210" x2="325" y2="340" stroke="#1C2B35" stroke-width="1.5"/>
+  <line x1="380" y1="210" x2="380" y2="340" stroke="#1C2B35" stroke-width="1.5"/>
+  <line x1="435" y1="210" x2="435" y2="340" stroke="#1C2B35" stroke-width="1.5"/>
+  <!-- Entry door -->
+  <rect x="502" y="270" width="55" height="70" fill="#1C2B35" rx="1"/>
+  <!-- Windows right -->
+  <rect x="575" y="220" width="80" height="55" fill="#BDD8E8" stroke="#1C2B35" stroke-width="1.5"/>
+  <rect x="668" y="220" width="60" height="55" fill="#BDD8E8" stroke="#1C2B35" stroke-width="1.5"/>
+  <!-- Alfresco posts -->
+  <rect x="264" y="200" width="10" height="170" fill="#A89070"/>
+  <rect x="494" y="200" width="10" height="170" fill="#A89070"/>
+  <!-- Ceiling fan alfresco (top view) -->
+  <circle cx="380" cy="175" r="5" fill="#4ECDC4" opacity="0.5"/>
+  <!-- Tropical plants -->
+  <ellipse cx="40" cy="360" rx="35" ry="18" fill="#3A7A38"/>
+  <ellipse cx="38" cy="345" rx="20" ry="30" fill="#4A8A48"/>
+  <ellipse cx="760" cy="360" rx="35" ry="18" fill="#3A7A38"/>
+  <ellipse cx="762" cy="340" rx="22" ry="35" fill="#4A8A48"/>
+  <!-- Teal highlight trim -->
+  <rect x="60" y="368" width="680" height="3" fill="#4ECDC4" opacity="0.4"/>
+  <!-- Brand bar -->
+  <rect x="0" y="448" width="800" height="32" fill="#1C2B35" opacity="0.85"/>
+  <text x="16" y="468" font-size="10" fill="#4ECDC4" font-weight="700" letter-spacing="2">WHITSUNDAY HOMES</text>
+  <text x="784" y="468" font-size="9" fill="rgba(255,255,255,0.5)" text-anchor="end">Artist Impression Only</text>
+</svg>
