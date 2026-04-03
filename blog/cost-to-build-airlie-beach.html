@@ -76,9 +76,8 @@
     <li><a href="../contact/index.html" class="nav-cta">Get a Quote</a></li>
   </ul>
   <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-</nav>
-<!-- Mobile nav drawer -->
-<div class="nav-drawer" id="navDrawer">
+
+  <div class="nav-drawer" id="navDrawer">
   <a href="../home-designs/index.html" class="nav-drawer-link">Home Designs</a>
   <a href="../previous-builds/index.html" class="nav-drawer-link">Previous Builds</a>
   <a href="../build-process.html" class="nav-drawer-link">Build Process</a>
@@ -87,6 +86,7 @@
   <a href="../blog/index.html" class="nav-drawer-link">Blog</a>
   <a href="../contact/index.html" class="nav-drawer-cta">Get a Free Quote</a>
 </div>
+</nav>
 
 <div class="post-layout">
   <article>
@@ -223,19 +223,32 @@
 </div>
 <script>
 (function(){
-  var toggle = document.querySelector('.nav-mobile-toggle');
+  var toggle = document.querySelector('#navToggle');
   var drawer = document.getElementById('navDrawer');
   if(!toggle || !drawer) return;
   toggle.addEventListener('click', function(){
-    var open = drawer.classList.toggle('open');
-    toggle.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
+    var isOpen = drawer.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    // Force correct styles on iOS Safari
+    if(isOpen){
+      drawer.style.display = 'flex';
+      drawer.style.position = 'fixed';
+      drawer.style.top = '68px';
+      drawer.style.left = '0';
+      drawer.style.right = '0';
+      drawer.style.bottom = '0';
+      drawer.style.zIndex = '9999';
+      document.body.style.overflow = 'hidden';
+    } else {
+      drawer.style.display = 'none';
+      document.body.style.overflow = '';
+    }
   });
-  // Close on link tap
   drawer.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){
       drawer.classList.remove('open');
       toggle.classList.remove('open');
+      drawer.style.display = 'none';
       document.body.style.overflow = '';
     });
   });
