@@ -192,9 +192,12 @@ footer{background:var(--ink);padding:64px 80px 40px}
   .builds-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .build-item.span-col{grid-row:span 1}
 }
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile-toggle{display:flex!important}
+}
 @media(max-width:640px){
   .designs-grid,.process-steps{grid-template-columns:1fr}
-  .nav-links{display:none}
   .footer-top{grid-template-columns:1fr}
   .builds-grid{grid-template-columns:1fr}
   .hero-left{padding:48px 24px}
